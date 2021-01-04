@@ -1,20 +1,15 @@
 <template>
   <div id="app">
-    <Home msg="Welcome to Your Vue.js App" />
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Home from "@views/home";
-
 export default {
-  name: "app",
+  name: 'app',
   components: {
-    Home,
   },
-  mounted() {
-    this.$message.success("你好啊");
-  },
+  mounted() {},
 };
 </script>
 
