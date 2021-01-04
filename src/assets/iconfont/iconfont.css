@@ -1,0 +1,32 @@
+@font-face {
+  font-family: "iconfont";
+  src: url("https://at.alicdn.com/t/font_2307170_645dnn2hcs8.eot?t=1609740918764"); /* IE9 */
+  src: url("https://at.alicdn.com/t/font_2307170_645dnn2hcs8.eot?t=1609740918764#iefix")
+      format("embedded-opentype"),
+    /* IE6-IE8 */
+      url("data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAAMsAAsAAAAABwQAAALeAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCDBgqBaIFrATYCJAMMCwgABCAFhG0HOhs1BsgucJwnHaPZ6DvY2cT6Tp48ExPoFYuHr7H0/d09RJcoQJWJBByflhWzMFWkULZGVZjoyvpqNuIGzrnQETbgWhMoypLmm/gGMh8+uuxgtTCnQ7CT0QNyzD/bYgqUFcjdqUt1p79hp11K5PmlCM7ldIA18c1kLGspX+B6f9w7/aOAApnPslzmGOefugDjrQGNtSmyAgnIG8YueIHHCTTNQ4HH++tnoqCwxwXikSpziULBrygsVReqDUuL+ICqp3dpAHgffT/+81EgqWT21JM7OzGx/EW+AvjV7McMjO7lrGCryNgAKMSVxvhlacEosKY8051bVYS0VOj/JOIbyupB/3iJqLKL22AFJhK/+h6L4FewTAIZVH1GcgfgISKPM0Jpddt25Ga6lVpYc0cMr7nerF7f63tZPtPiEZK/RVxu03pfVqvpWvJ6XYsst130xoLny117rYrVL0a+tS93Mj8601/fAc99uF4btcwXfxmggeFzCluQ9J78/OVrnvxAbzP5L64j4gSchIM5lS4P05LP7NS51Hms/0xmkvOYC9tGAH2Q8AwsO5pP08cmQfw9n9/9G+Xl3GXq29dZAT8b8yDyzjYxzAnUb8YR/FzBwLJiiGxDLhrf41uObDPnlYBc7jIDtnvoNF05GRwl1AsCBknNHGR1C2ghb0BFyxZU1e1B0zpxdctIKC1KA2tSAKGvhKTrFLK+IVrIR6iYekNVP9LQdDFGW7YshVo6cpDzUAQ9Bk8gS3JNXikufUfZNzgnL4qo3+i4aggobcupA1roLDEjCuRh7ElgO2SCAE5DwyDwHdJQ8Lqu5z3GhFlNb+oaZCZKjjgQx4NEQBcDHgGxSEF1T6ny+XdI5jNwnA5Cnf0bcrjUzgEFRw5AD3JrEOFRXokEZEMxjwTYHMQEBGBFhhMnwG8epEECT5c7IfowRqBK9lB5d3ul+X9roMneP0eKHEX1pUJ+jPlbqiWHqCYSAAA=")
+      format("woff2"),
+    url("https://at.alicdn.com/t/font_2307170_645dnn2hcs8.woff?t=1609740918764")
+      format("woff"),
+    url("https://at.alicdn.com/t/font_2307170_645dnn2hcs8.ttf?t=1609740918764")
+      format("truetype"),
+    /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+      url("https://at.alicdn.com/t/font_2307170_645dnn2hcs8.svg?t=1609740918764#iconfont")
+      format("svg"); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-shouye:before {
+  content: "\e630";
+}
+
+.icon-dingwei:before {
+  content: "\e676";
+}
