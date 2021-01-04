@@ -3,18 +3,16 @@ import VueRouter from "vue-router";
 
 // import Home from "../views/Home";
 
-const Home = () => import(/* webpackChunkName: "Home" */ "../views/home");
-
+// const Home = () => import(/* webpackChunkName: "Home" */ "../views/home");
+const Hotel = () => import(/* webpackChunkName: "Hotel" */ "../views/hotel");
 Vue.use(VueRouter);
 
 const push = VueRouter.prototype.push;
 const replace = VueRouter.prototype.replace;
-
 // // 简写形式
 VueRouter.prototype.push = function(location, onComplete, onAbort = () => {}) {
   return push.call(this, location, onComplete, onAbort);
 };
-
 VueRouter.prototype.replace = function(
   location,
   onComplete,
@@ -26,11 +24,15 @@ VueRouter.prototype.replace = function(
 
 const router = new VueRouter({
   // mode: "hash",
-  mode: "history",
+  // mode: "history",
   routes: [
+    // {
+    //   path: "/",
+    //   component: Home,
+    // },
     {
       path: "/",
-      component: Home,
+      component: Hotel,
     },
   ],
 });

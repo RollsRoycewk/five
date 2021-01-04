@@ -10,7 +10,8 @@ import router from "./routers";
 
 // 引入样式重置(王凯)
 import "./styles/reset.css";
-
+// 引入字体图标(张升涛)
+import "./styles/iconfont.css";
 Vue.config.productionTip = false;
 
 new Vue({
