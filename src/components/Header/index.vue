@@ -17,7 +17,7 @@
               <span>消息</span>
             </li>
             <li>
-              <span>我的携程</span>
+              <span @click="toPersonal">我的携程</span>
             </li>
             <li>
               <span>我的订单</span>
@@ -35,7 +35,7 @@
     <div class="searchContainer">
       <div class="left">
         <div class="logoContainer">
-          <a class="logo" href="">123</a>
+          <router-link to="/" class="logo" href=""></router-link>
         </div>
         <div class="search">
           <input type="text" placeholder="搜索旅行地/酒店/旅游/景点门票/交通" />
@@ -73,6 +73,11 @@
 <script>
 export default {
   name: 'Header',
+  methods: {
+    toPersonal() {
+      this.$router.push('/personal');
+    },
+  },
 };
 </script>
 

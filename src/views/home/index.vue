@@ -1,6 +1,5 @@
 <template>
   <div>
-    <Header></Header>
     <div class="contentContainer">
       <!-- 轮播图 -->
       <div class="bunnerContainer">
@@ -99,7 +98,11 @@
                       </el-select>
                     </el-form-item>
                     <el-form-item>
-                      <el-button type="primary" style="marginLeft: 70px;width: 100px">搜索</el-button>
+                      <el-button
+                        type="primary"
+                        style="marginleft: 70px; width: 100px"
+                        >搜索</el-button
+                      >
                     </el-form-item>
                   </el-form>
                 </el-tab-pane>
@@ -391,13 +394,10 @@
         </div>
       </div>
     </div>
-    <Footer></Footer>
   </div>
 </template>
 
 <script>
-import Header from '@components/Header/index';
-import Footer from '@components/Footer/index';
 export default {
   name: 'Home',
   data() {
@@ -418,10 +418,7 @@ export default {
       },
     };
   },
-  components: {
-    Header,
-    Footer,
-  },
+  components: {},
 };
 </script>
 
