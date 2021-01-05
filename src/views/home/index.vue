@@ -4,20 +4,8 @@
       <!-- 轮播图 -->
       <div class="bunnerContainer">
         <el-carousel trigger="click" :interval="5000" height="340px">
-          <el-carousel-item>
-            <img src="../../assets/images/bunner1.jpg" alt="" />
-          </el-carousel-item>
-          <el-carousel-item>
-            <img src="../../assets/images/bunner2.jpg" alt="" />
-          </el-carousel-item>
-          <el-carousel-item>
-            <img src="../../assets/images/bunner3.jpg" alt="" />
-          </el-carousel-item>
-          <el-carousel-item>
-            <img src="../../assets/images/bunner4.jpg" alt="" />
-          </el-carousel-item>
-          <el-carousel-item>
-            <img src="../../assets/images/bunner5.jpg" alt="" />
+          <el-carousel-item v-for="bunner in bunnerList" :key="bunner._id">
+            <img :src="bunner.imgesUrl" :alt="bunner.imgesName" />
           </el-carousel-item>
         </el-carousel>
         <!-- 搜索框 -->
@@ -398,6 +386,8 @@
 </template>
 
 <script>
+import getBunnerPic from '../../api/home.js';
+// import axios from 'axios';
 export default {
   name: 'Home',
   data() {
@@ -407,6 +397,8 @@ export default {
       hotelName: 'first',
       ticketName: 'first',
       carName: 'first',
+      // 轮播图列表
+      bunnerList: [],
       // 酒店搜索表单
       hotelSearch: {
         destination: '',
@@ -419,6 +411,10 @@ export default {
     };
   },
   components: {},
+  async mounted() {
+    const result = await getBunnerPic('http://8.129.66.189:8081/test');
+    this.bunnerList = result;
+  },
 };
 </script>
 
