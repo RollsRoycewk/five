@@ -39,7 +39,69 @@
               <el-tabs v-model="activeName">
                 <el-tab-pane label="国内酒店" name="first">
                   <!-- 表单 -->
-                  <div>目的地<input type="text" /></div>
+                  <el-form
+                    :inline="true"
+                    class="formContainer"
+                    label-width="70px"
+                  >
+                    <!-- 目的地 -->
+                    <el-form-item label="目的地">
+                      <el-input
+                        v-model="hotelSearch.destination"
+                        placeholder="拼音/中文"
+                        style="width: 358px"
+                      ></el-input>
+                    </el-form-item>
+                    <el-form-item label="入住日期">
+                      <el-date-picker
+                        v-model="hotelSearch.stayInDate"
+                        type="date"
+                        placeholder="选择日期"
+                        style="width: 140px"
+                      ></el-date-picker>
+                    </el-form-item>
+                    <el-form-item label="退房日期">
+                      <el-date-picker
+                        v-model="hotelSearch.checkOutDate"
+                        type="date"
+                        placeholder="选择日期"
+                        style="width: 140px"
+                      ></el-date-picker>
+                    </el-form-item>
+                    <el-form-item label="房间数">
+                      <el-select
+                        style="width: 140px"
+                        v-model="hotelSearch.Rooms"
+                      >
+                        <el-option label="1间" value="1">1间</el-option>
+                        <el-option label="2间" value="2">2间</el-option>
+                      </el-select>
+                    </el-form-item>
+                    <el-form-item label="住客数">
+                      <el-select
+                        style="width: 140px"
+                        v-model="hotelSearch.peoples"
+                      >
+                        <el-option label="1人" value="1">1人</el-option>
+                        <el-option label="2人" value="2">2人</el-option>
+                      </el-select>
+                    </el-form-item>
+                    <el-form-item label="酒店级别">
+                      <el-select
+                        style="width: 140px"
+                        v-model="hotelSearch.stars"
+                      >
+                        <el-option label="1星级" value="1">1星级</el-option>
+                        <el-option label="2星级" value="2">2星级</el-option>
+                        <el-option label="3星级" value="3">3星级</el-option>
+                        <el-option label="4星级" value="4">4星级</el-option>
+                        <el-option label="5星级" value="5">5星级</el-option>
+                      </el-select>
+                    </el-form-item>
+                    <el-form-item>
+                      <el-button type="primary" style="marginLeft: 70px;width: 100px">搜索</el-button>
+                    </el-form-item>
+                  </el-form>
                 </el-tab-pane>
                 <el-tab-pane label="海外酒店" name="2">配置管理</el-tab-pane>
               </el-tabs>
@@ -135,7 +197,7 @@
       </div>
       <!-- 酒店 -->
       <div class="hotelContainer">
-        <el-tabs v-model="travelName">
+        <el-tabs v-model="hotelName">
           <el-tab-pane class="foreignHotel" label="海外酒店" name="first">
             <div class="left">
               <div>
@@ -256,6 +318,78 @@
           >
         </el-tabs>
       </div>
+      <!-- 底部导航 -->
+      <div class="footNav">
+        <div class="advantage">
+          <h3>为什么选择携程</h3>
+          <div>
+            <div class="advanImg"><img src="" alt="" /></div>
+            <div class="server">
+              <p class="advanTitle">放心的服务</p>
+              <p>领先的服务标准 独创的保障体系</p>
+            </div>
+          </div>
+          <div>
+            <div class="advanImg"><img src="" alt="" /></div>
+            <div class="price">
+              <p class="advanTitle">放心的价格</p>
+              <p>具竞争力的价格 无任何隐形费用</p>
+            </div>
+          </div>
+        </div>
+        <div class="travelInfo">
+          <h3>旅游资讯</h3>
+          <ul>
+            <li>宾馆索引</li>
+            <li>攻略索引</li>
+            <li>机票索引</li>
+            <li>旅游索引</li>
+            <li>邮轮索引</li>
+            <li>用车索引</li>
+            <li>攻略索引</li>
+            <li>网站导航</li>
+            <li>火车票索引</li>
+          </ul>
+        </div>
+        <div class="joinIn">
+          <h3>加盟合作</h3>
+          <ul>
+            <li>分销联盟</li>
+            <li>广告业务</li>
+            <li>保险代理</li>
+            <li>酒店加盟</li>
+            <li>智慧旅游</li>
+            <li>友情链接</li>
+            <li>企业礼品卡采购</li>
+            <li>代理合作</li>
+            <li>目的地</li>
+            <li>更多加盟合作</li>
+          </ul>
+        </div>
+        <div class="aboutInfo">
+          <h3>关于携程</h3>
+          <ul>
+            <li>关于携程</li>
+            <li>联系我们</li>
+            <li>旅游度假资质</li>
+            <li>用户协议</li>
+            <li>营业执照</li>
+            <li>携程信用卡</li>
+            <li>携程热点</li>
+            <li>诚聘英才</li>
+            <li>企业公民</li>
+            <li>隐私政策</li>
+          </ul>
+        </div>
+        <div class="wechatCode">
+          <p>微信公众号</p>
+          <div class="code">
+            <img src="../../assets/images/code.jpg" alt="" />
+            <p>扫一扫</p>
+            <p>了解爆款旅行好货</p>
+          </div>
+        </div>
+      </div>
     </div>
     <Footer></Footer>
   </div>
@@ -270,13 +404,23 @@ export default {
     return {
       activeName: 'first',
       travelName: 'first',
+      hotelName: 'first',
       ticketName: 'first',
       carName: 'first',
+      // 酒店搜索表单
+      hotelSearch: {
+        destination: '',
+        stayInDate: new Date(),
+        checkOutDate: '',
+        Rooms: '1',
+        peoples: '1',
+        stars: '1',
+      },
     };
   },
   components: {
     Header,
-    Footer
+    Footer,
   },
 };
 </script>
@@ -287,8 +431,8 @@ export default {
 }
 .contentContainer {
   background-color: rgb(246, 246, 246);
-  height: 2000px;
   margin-top: 50px;
+  padding-bottom: 50px;
   // 轮播图
   .bunnerContainer {
     height: 340px;
@@ -342,6 +486,9 @@ export default {
           margin: 0 auto;
           .el-tabs__ite {
             font-size: 14px;
+          }
+          .formContainer {
+            padding-top: 15px;
           }
         }
       }
@@ -463,7 +610,7 @@ export default {
         }
       }
       .right {
-        border-left: 1px solid black;
+        border-left: 1px solid #dedede;
         .list {
           width: 953px;
           height: 375px;
@@ -520,8 +667,9 @@ export default {
   // 机票
   .ticketContainer {
     width: 1180px;
+    height: 440px;
     background-color: #fff;
-    margin: 50px auto;
+    margin: 50px auto 0;
     .el-tabs__header {
       margin-bottom: 15px;
     }
@@ -578,6 +726,62 @@ export default {
             color: white;
             text-align: center;
           }
+        }
+      }
+    }
+  }
+  // 底部导航
+  .footNav {
+    width: 1180px;
+    margin: 0 auto;
+    margin-top: 50px;
+    display: flex;
+    & > div {
+      border-right: 1px solid #dedede;
+      padding-left: 25px;
+      h3 {
+        font-size: 20px;
+      }
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        li {
+          width: 110px;
+        }
+      }
+    }
+    .advantage {
+      width: 245px;
+    }
+    .travelInfo {
+      width: 260px;
+    }
+    .joinIn {
+      width: 260px;
+    }
+    .aboutInfo {
+      width: 250px;
+    }
+    .wechatCode {
+      width: 160px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+      padding: 0;
+      p {
+        width: 100px;
+        text-align: center;
+      }
+      .code {
+        width: 132px;
+        height: 170px;
+        text-align: center;
+        padding-top: 10px;
+        border: 1px solid #dedede;
+        p {
+          width: auto;
+          font-size: 12px;
+          text-align: center;
         }
       }
     }
