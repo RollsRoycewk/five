@@ -105,69 +105,23 @@
         <el-tabs v-model="travelName">
           <el-tab-pane class="hot" label="热门" name="first">
             <ul>
-              <li class="checked">境内</li>
-              <li>日本</li>
-              <li>东南亚</li>
-              <li>欧洲</li>
-              <li>美洲</li>
-              <li>澳中东非</li>
+              <li v-for="(destCity, index) in traveInfo.destCitys" :key="index">
+                {{ destCity.nme }}
+              </li>
             </ul>
             <div class="hotList">
               <div class="hotItem">
-                <div>
-                  <img src="../../assets/images/hot1.jpg" alt="" />
+                <div
+                  v-for="(tabContent, index) in traveInfo.tabContentLst.slice(
+                    0,
+                    8
+                  )"
+                  :key="index"
+                >
+                  <img :src="tabContent.img" alt="" />
                   <div class="mask">
-                    <span>三亚</span>
-                    <span>￥1223/人起</span>
-                  </div>
-                </div>
-                <div>
-                  <img src="../../assets/images/hot1.jpg" alt="" />
-                  <div class="mask">
-                    <span>三亚</span>
-                    <span>￥1223/人起</span>
-                  </div>
-                </div>
-                <div>
-                  <img src="../../assets/images/hot1.jpg" alt="" />
-                  <div class="mask">
-                    <span>三亚</span>
-                    <span>￥1223/人起</span>
-                  </div>
-                </div>
-                <div>
-                  <img src="../../assets/images/hot1.jpg" alt="" />
-                  <div class="mask">
-                    <span>三亚</span>
-                    <span>￥1223/人起</span>
-                  </div>
-                </div>
-                <div>
-                  <img src="../../assets/images/hot1.jpg" alt="" />
-                  <div class="mask">
-                    <span>三亚</span>
-                    <span>￥1223/人起</span>
-                  </div>
-                </div>
-                <div>
-                  <img src="../../assets/images/hot1.jpg" alt="" />
-                  <div class="mask">
-                    <span>三亚</span>
-                    <span>￥1223/人起</span>
-                  </div>
-                </div>
-                <div>
-                  <img src="../../assets/images/hot1.jpg" alt="" />
-                  <div class="mask">
-                    <span>三亚</span>
-                    <span>￥1223/人起</span>
-                  </div>
-                </div>
-                <div>
-                  <img src="../../assets/images/hot1.jpg" alt="" />
-                  <div class="mask">
-                    <span>三亚</span>
-                    <span>￥1223/人起</span>
+                    <span>{{ tabContent.prdNme }}</span>
+                    <span>￥{{ tabContent.price.amt }}/人起</span>
                   </div>
                 </div>
               </div>
@@ -190,33 +144,27 @@
       <div class="hotelContainer">
         <el-tabs v-model="hotelName">
           <el-tab-pane class="foreignHotel" label="海外酒店" name="first">
+            <!-- 左边的文章列表 -->
             <div class="left">
-              <div>
-                <h3>促销</h3>
+              <div v-if="hotelInfo.tagUp">
+                <h3>{{ hotelInfo.tagUp.nme }}</h3>
                 <ul>
-                  <li><span>睡遍全世界—新加坡国家馆</span></li>
-                  <li>睡遍全世界—日本国家馆</li>
-                  <li>睡遍全世界—澳大利亚站</li>
-                  <li>睡遍全世界-马来西亚国家馆</li>
-                  <li>睡遍全世界—泰国国家馆</li>
+                  <li
+                    v-for="(item, index) in hotelInfo.tagUp.itemLst"
+                    :key="index"
+                  >
+                    <a :href="item.lnk">{{ item.nme }}</a>
+                  </li>
                 </ul>
               </div>
-              <div>
-                <h3>发现酒店</h3>
+              <div v-if="hotelInfo.tagDown">
+                <h3>{{ hotelInfo.tagDown.nme }}</h3>
                 <ul>
-                  <li>
-                    <span>流行与复古结合的热门人气地——首尔仁寺洞钟路</span>
-                  </li>
-                  <li>
-                    <span
-                      >特别的旅行，美味的餐食，绝美的夜景，这次冬季旅行就去釜山吧</span
-                    >
-                  </li>
-                  <li><span>睡遍全世界—澳大利亚站</span></li>
-                  <li><span>孟加拉国吉大港酒店推荐</span></li>
-                  <li><span>最受国人欢迎的伦敦酒店</span></li>
-                  <li>
-                    <span>流行与复古结合的热门人气地——首尔仁寺洞钟路</span>
+                  <li
+                    v-for="(item, index) in hotelInfo.tagDown.itemLst"
+                    :key="index"
+                  >
+                    <a :href="item.lnk">{{ item.nme }}</a>
                   </li>
                 </ul>
               </div>
@@ -224,51 +172,21 @@
             <div class="right">
               <div class="list">
                 <div class="item">
-                  <div>
-                    <img src="../../assets/images/hot1.jpg" alt="" />
-                    <div class="mask">
-                      <span>三亚</span>
-                      <span>￥1223/人起</span>
-                    </div>
-                  </div>
-                  <div>
-                    <img src="../../assets/images/hot1.jpg" alt="" />
-                    <div class="mask">
-                      <span>三亚</span>
-                      <span>￥1223/人起</span>
-                    </div>
-                  </div>
-                  <div>
-                    <img src="../../assets/images/hot1.jpg" alt="" />
-                    <div class="mask">
-                      <span>三亚</span>
-                      <span>￥1223/人起</span>
-                    </div>
-                  </div>
-                  <div>
-                    <img src="../../assets/images/hot1.jpg" alt="" />
-                    <div class="mask">
-                      <span>三亚</span>
-                      <span>￥1223/人起</span>
-                    </div>
-                  </div>
-                  <div>
-                    <img src="../../assets/images/hot1.jpg" alt="" />
-                    <div class="mask">
-                      <span>三亚</span>
-                      <span>￥1223/人起</span>
-                    </div>
-                  </div>
-                  <div>
-                    <img src="../../assets/images/hot1.jpg" alt="" />
-                    <div class="mask">
-                      <span>三亚</span>
-                      <span>￥1223/人起</span>
-                    </div>
+                  <div v-for="(item, index) in hotelInfo.prdLst" :key="index">
+                    <a :href="item.lnk">
+                      <img :src="item.img" alt="" />
+                      <div class="mask">
+                        <span>{{ item.nme }}</span>
+                        <span>￥{{ item.price.amt }}/人起</span>
+                      </div>
+                    </a>
                   </div>
                 </div>
                 <div class="recommend">
-                  <img src="../../assets/images/recommend.jpg" alt="" />
+                  <img
+                    :src="hotelInfo.adLst ? hotelInfo.adLst[0].img : ''"
+                    alt=""
+                  />
                 </div>
               </div>
             </div>
@@ -286,19 +204,27 @@
             name="first"
           >
             <ul>
-              <li class="checked">境内</li>
-              <li>日本</li>
-              <li>东南亚</li>
-              <li>欧洲</li>
-              <li>美洲</li>
-              <li>澳中东非</li>
+              <li
+                :class="index === curentIndex ? 'checked' : ''"
+                v-for="(item, index) in ticketInfo.tabLst"
+                :key="index"
+                @click="getTicket(index, item.tabNme)"
+              >
+                {{ item.tabNme }}
+              </li>
             </ul>
             <div class="list">
-              <div class="item" v-for="item in 12" :key="item">
-                <p class="itemName">上海到澳门</p>
-                <p class="date">1月09日 - 1月16日</p>
+              <div
+                class="item"
+                v-for="(item, index) in ticketInfo.caleLst"
+                :key="index"
+              >
+                <p class="itemName">{{ item.dcNme }}到{{ item.acNme }}</p>
+                <p class="date">{{ item.dateTxt }}</p>
                 <p class="itemInfo">
-                  <span>$ <strong>600</strong> 元起</span>
+                  <span
+                    >$ <strong>{{ item.price.amt }}</strong> 元起</span
+                  >
                   <span class="button">立抢</span>
                 </p>
               </div>
@@ -386,7 +312,12 @@
 </template>
 
 <script>
-import getBunnerPic from '../../api/home.js';
+import {
+  getBunnerPic,
+  getTravelList,
+  getHotelList,
+  getHotTicket,
+} from '../../api/home.js';
 // import axios from 'axios';
 export default {
   name: 'Home',
@@ -399,6 +330,16 @@ export default {
       carName: 'first',
       // 轮播图列表
       bunnerList: [],
+      // 旅游列表
+      traveInfo: {
+        destCitys: [],
+        tabContentLst: [],
+      },
+      // 酒店列表
+      hotelInfo: {},
+      // 机票列表详情
+      curentIndex: 0,
+      ticketInfo: {},
       // 酒店搜索表单
       hotelSearch: {
         destination: '',
@@ -410,10 +351,50 @@ export default {
       },
     };
   },
+  computed: {},
+  methods: {
+    // 获取轮播图数据
+    getBunnerInfo() {
+      getBunnerPic('http://8.129.66.189:8081/home/bunnerList').then(
+        (result) => {
+          this.bunnerList = result;
+        }
+      );
+    },
+    // 获取旅游数据
+    getTravelInfo() {
+      getTravelList('http://8.129.66.189:8081/home/travelList').then(
+        (result) => {
+          this.traveInfo = result[0].travelist;
+        }
+      );
+    },
+    // 获取酒店数据
+    getHotelInfo() {
+      getHotelList('http://8.129.66.189:8081/home/hotelList').then((result) => {
+        this.hotelInfo = result[0];
+      });
+    },
+    // 获取机票数据
+    getHotTicketInfo(name) {
+      getHotTicket(`http://8.129.66.189:8081/home/hotTicket?name=${name}`).then(
+        (result) => {
+          this.ticketInfo = result[0];
+        }
+      );
+    },
+    // 切换机票数据
+    getTicket(index, name) {
+      this.curentIndex = index;
+      this.getHotTicketInfo(name);
+    },
+  },
   components: {},
-  async mounted() {
-    const result = await getBunnerPic('http://8.129.66.189:8081/test');
-    this.bunnerList = result;
+  mounted() {
+    this.getBunnerInfo();
+    this.getTravelInfo();
+    this.getHotelInfo();
+    this.getHotTicketInfo('热门往返');
   },
 };
 </script>
@@ -594,11 +575,17 @@ export default {
           padding: 10px 0;
         }
         li {
-          span {
+          a {
+            color: #666;
+            font-size: 12px;
+            margin-top: 5px;
             display: block;
             white-space: nowrap;
             overflow: hidden;
             text-overflow: ellipsis;
+            &:hover {
+              color: #3983e5;
+            }
           }
         }
       }
@@ -619,9 +606,10 @@ export default {
             flex-wrap: wrap;
             div {
               width: 220px;
-              height: 160px;
+              height: 165px;
               background-color: #bfa;
               position: relative;
+              overflow: hidden;
               .mask {
                 width: 112px;
                 height: 112px;
