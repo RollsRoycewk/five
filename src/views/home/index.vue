@@ -404,13 +404,18 @@ export default {
   margin: 0;
 }
 .contentContainer {
+  min-width: 1180px;
   background-color: rgb(246, 246, 246);
   margin-top: 50px;
   padding-bottom: 50px;
   // 轮播图
   .bunnerContainer {
+    margin: 0 auto;
+    width: 100%;
+    min-width: 1180px;
     height: 340px;
     img {
+      width: 100%;
       height: 100%;
     }
     .el-carousel__indicators {

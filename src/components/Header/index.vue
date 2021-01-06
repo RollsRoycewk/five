@@ -52,6 +52,7 @@
               v-for="(item, index) in searchResult"
               :key="index"
               class="showItem"
+              :url="item.url ? item.url : '#'"
               >{{ item.word }}</a
             >
           </div>
