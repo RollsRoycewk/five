@@ -306,10 +306,6 @@
                   >
                     <a href="javascript:;">{{ shop }}</a>
                   </li>
-                  <!-- <li><a href="javascript:;">华南</a></li>
-                  <li><a href="javascript:;">华中</a></li>
-                  <li><a href="javascript:;">西南</a></li>
-                  <li><a href="javascript:;">西北</a></li> -->
                 </ul>
               </div>
               <div class="recommendedshops-con">
@@ -329,54 +325,6 @@
                     </div>
                   </div>
                 </div>
-                <!-- <div class="recommendedshops-con-item">
-                  <img
-                    src="https://images4.c-ctrip.com/target//100t0i0000009mrsd86B4.jpg"
-                    alt=""
-                  />
-                  <div class="item-footer">
-                    <img
-                      src="https://images3.c-ctrip.com/dj/201712/img/jiaxing_logo.jpg"
-                      alt=""
-                    />
-                    <div>
-                      <strong>心游嘉兴体验馆</strong>
-                      <span>红船起梦,心游嘉兴;江南哈哈哈哈</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="recommendedshops-con-item">
-                  <img
-                    src="https://images4.c-ctrip.com/target//100t0i0000009mrsd86B4.jpg"
-                    alt=""
-                  />
-                  <div class="item-footer">
-                    <img
-                      src="https://images3.c-ctrip.com/dj/201712/img/jiaxing_logo.jpg"
-                      alt=""
-                    />
-                    <div>
-                      <strong>心游嘉兴体验馆</strong>
-                      <span>红船起梦,心游嘉兴;江南哈哈哈哈</span>
-                    </div>
-                  </div>
-                </div>
-                <div class="recommendedshops-con-item">
-                  <img
-                    src="https://images4.c-ctrip.com/target//100t0i0000009mrsd86B4.jpg"
-                    alt=""
-                  />
-                  <div class="item-footer">
-                    <img
-                      src="https://images3.c-ctrip.com/dj/201712/img/jiaxing_logo.jpg"
-                      alt=""
-                    />
-                    <div>
-                      <strong>心游嘉兴体验馆</strong>
-                      <span>红船起梦,心游嘉兴;江南哈哈哈哈</span>
-                    </div>
-                  </div>
-                </div> -->
               </div>
             </div>
             <!-- 推荐游记 -->
@@ -708,12 +656,33 @@ export default {
       // 文章推荐列表
       recommendedArticles: [],
       // 无限滚动
+      // 是否更新中
+      flag: true,
     };
   },
   methods: {
     handleClick() {},
     handleShopIndex(index) {
       this.isShop = index;
+    },
+    // 请求列表添加数据
+    async getrecommendedArticles() {
+      const res = await aixos({
+        url: "http://wangkai.zone:8082/ctrip",
+        method: "GET",
+      });
+      // 文章推荐列表
+      if (this.recommendedArticles.length === 0) {
+        this.recommendedArticles = res.data[0].recommendedArticles.slice(0, 5);
+      } else {
+        if (this.recommendedArticles.length > 30) {
+          return;
+        } else {
+          this.recommendedArticles.push(
+            ...res.data[0].recommendedArticles.slice(5, 10)
+          );
+        }
+      }
     },
   },
   async mounted() {
@@ -725,7 +694,17 @@ export default {
     this.district = res.data[0].district;
     this.shopDetail = res.data[0].shopDetail;
     // 文章推荐列表
-    this.recommendedArticles = res.data[0].recommendedArticles.slice(0, 5);
+    // this.recommendedArticles = res.data[0].recommendedArticles.slice(0, 5);
+    this.getrecommendedArticles();
+
+    // 无限滚动功能实现
+    document.onscroll = () => {
+      let { clientHeight, offsetHeight } = document.documentElement;
+      // console.log("计算啊", offsetHeight - clientHeight - window.pageYOffset);
+      if (offsetHeight - clientHeight - window.pageYOffset < 627) {
+        this.getrecommendedArticles();
+      }
+    };
   },
 };
 </script>
