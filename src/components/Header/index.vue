@@ -38,8 +38,23 @@
           <router-link to="/" class="logo" href=""></router-link>
         </div>
         <div class="search">
-          <input type="text" placeholder="搜索旅行地/酒店/旅游/景点门票/交通" />
+          <input
+            v-model="searchMessage"
+            type="text"
+            placeholder="搜索旅行地/酒店/旅游/景点门票/交通"
+          />
           <button></button>
+          <div
+            class="showResult"
+            v-show="searchResult.length !== 0 && searchMessage"
+          >
+            <a
+              v-for="(item, index) in searchResult"
+              :key="index"
+              class="showItem"
+              >{{ item.word }}</a
+            >
+          </div>
         </div>
       </div>
       <div class="phone">境内：95010</div>
@@ -71,8 +86,26 @@
 </template>
 
 <script>
+import axios from 'axios';
 export default {
   name: 'Header',
+  data() {
+    return {
+      searchMessage: '',
+      searchResult: [],
+    };
+  },
+  watch: {
+    searchMessage() {
+      axios
+        .get(
+          `https://m.ctrip.com/restapi/h5api/globalsearch/search?action=online&source=globalonline&keyword=${this.searchMessage}`
+        )
+        .then((result) => {
+          this.searchResult = result.data.data;
+        });
+    },
+  },
   methods: {
     toPersonal() {
       this.$router.push('/personal');
@@ -141,6 +174,7 @@ export default {
       }
     }
     .search {
+      position: relative;
       input {
         width: 350px;
         height: 30px;
@@ -152,8 +186,21 @@ export default {
         height: 30px;
         width: 40px;
         border: 1px solid #2577e3;
-        background-color: #2577e3;
+        background: url(https://pic.c-ctrip.com/platform/online/home/un_header_footer20160610.png)
+          50px 0px #2577e3 no-repeat;
         border-radius: 0 5px 5px 0;
+      }
+      .showResult {
+        position: absolute;
+        z-index: 100;
+        width: 350px;
+        border: 1px solid #333;
+        background-color: #fff;
+        .showItem {
+          display: block;
+          line-height: 30px;
+          padding: 5px 20px 5px 34px;
+        }
       }
     }
   }
