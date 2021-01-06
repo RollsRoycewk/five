@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="contentContainer">
+    <div class="contentContainer" @click="hideCitySelection">
       <!-- 轮播图 -->
       <div class="bunnerContainer">
         <el-carousel trigger="click" :interval="5000" height="340px">
@@ -37,6 +37,7 @@
                         v-model="hotelSearch.destination"
                         placeholder="拼音/中文"
                         style="width: 358px"
+                        @focus="showCitySelection"
                       ></el-input>
                     </el-form-item>
                     <el-form-item label="入住日期">
@@ -93,6 +94,10 @@
                       >
                     </el-form-item>
                   </el-form>
+                  <CitySelection
+                    v-show="isShowCitySelection"
+                    @getCityName="checkCity"
+                  ></CitySelection>
                 </el-tab-pane>
                 <el-tab-pane label="海外酒店" name="2">配置管理</el-tab-pane>
               </el-tabs>
@@ -318,6 +323,7 @@ import {
   getHotelList,
   getHotTicket,
 } from '../../api/home.js';
+import CitySelection from '@components/CitySelection/index.vue';
 // import axios from 'axios';
 export default {
   name: 'Home',
@@ -330,6 +336,8 @@ export default {
       carName: 'first',
       // 轮播图列表
       bunnerList: [],
+      // 城市选择框显示状态
+      isShowCitySelection: false,
       // 旅游列表
       traveInfo: {
         destCitys: [],
@@ -344,7 +352,7 @@ export default {
       hotelSearch: {
         destination: '',
         stayInDate: new Date(),
-        checkOutDate: '',
+        checkOutDate: new Date().setDate(new Date().getDate() + 1),
         Rooms: '1',
         peoples: '1',
         stars: '1',
@@ -388,8 +396,24 @@ export default {
       this.curentIndex = index;
       this.getHotTicketInfo(name);
     },
+    // 显示城市选择框
+    showCitySelection() {
+      this.isShowCitySelection = true;
+    },
+    // 隐藏城市选择框
+    hideCitySelection(e) {
+      if (e.target.localName === 'input') return;
+      this.isShowCitySelection = false;
+    },
+    // 城市选择框选择城市名字
+    checkCity(name) {
+      this.hotelSearch.destination = name;
+      this.isShowCitySelection = false;
+    },
   },
-  components: {},
+  components: {
+    CitySelection,
+  },
   mounted() {
     this.getBunnerInfo();
     this.getTravelInfo();
@@ -460,6 +484,11 @@ export default {
           }
         }
         .right {
+          /deep/ .selectionContainer {
+            position: relative;
+            top: -214px;
+            right: -70px;
+          }
           width: 451px;
           height: 300px;
           margin: 0 auto;

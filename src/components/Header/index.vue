@@ -115,7 +115,10 @@ export default {
 };
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
+html{
+  position: relative;
+}
 // 头
 .headerContainer .header {
   background-color: #f4f4f4;
@@ -208,6 +211,8 @@ export default {
 }
 // 导航栏
 .nav {
+  position: sticky;
+  top: 10px;
   width: 100%;
   height: 40px;
   min-width: 1180px;
