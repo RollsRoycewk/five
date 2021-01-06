@@ -8,10 +8,17 @@ import store from "@store/index"; // 王凯
 // 引入路由(王凯)
 import router from "./routers";
 
+import VueLazyload from "vue-lazyload";
+
 // 引入样式重置(王凯)
 import "./styles/reset.css";
 // 引入图标字体
 import "@assets/iconfont/iconfont.css";
+
+Vue.use(VueLazyload, {
+  // loading: require("@assets/images/loading.gif"),
+  loading: require("./assets/images/loading.gif"),
+});
 
 Vue.config.productionTip = false;
 

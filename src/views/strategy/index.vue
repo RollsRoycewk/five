@@ -318,9 +318,11 @@
                   v-for="(shopDetailitem, index) in shopDetail[isShop]"
                   :key="index"
                 >
-                  <img :src="shopDetailitem.indexUrl" alt="" />
+                  <!-- <img :src="shopDetailitem.indexUrl" alt="" /> -->
+                  <img v-lazy="shopDetailitem.indexUrl" alt="" />
                   <div class="item-footer">
-                    <img :src="shopDetailitem.smallUrl" alt="" />
+                    <!-- <img :src="shopDetailitem.smallUrl" alt="" /> -->
+                    <img v-lazy="shopDetailitem.smallUrl" alt="" />
                     <div>
                       <strong>{{ shopDetailitem.name }}</strong>
                       <span>{{ shopDetailitem.describe }}</span>
@@ -394,18 +396,17 @@
             </div>
             <!-- 文章 -->
             <div class="recommended-list">
-              <div class="recommended-list-item" v-for="item in 10" :key="item">
-                <img
-                  src="https://images4.c-ctrip.com/target//100t0i0000009mrsd86B4.jpg"
-                  alt=""
-                />
+              <div
+                class="recommended-list-item"
+                v-for="item in recommendedArticles"
+                :key="item.imgUrl"
+              >
+                <img v-lazy="item.imgUrl" alt="" />
                 <div>
-                  <div>要是不来东北见识冰雪奇缘，仿佛错过了一整个冬天！</div>
-                  <div>落绪纷飞 发表于 2020-12-24</div>
-                  <div>
-                    来东北何必非要去雪乡？这个UFO来过的地方才是真正的冰雪奇缘关于雪的浪漫故事很多，听
-                  </div>
-                  <div>148 1677 38</div>
+                  <div>{{ item.title }}</div>
+                  <div>{{ item.time }}</div>
+                  <div>{{ item.content }}</div>
+                  <div>{{ item.num }}</div>
                 </div>
               </div>
               <!-- 底部导航 -->
@@ -432,7 +433,7 @@
                   <div></div>
                 </div>
               </div>
-              <ul class="comment-list" v-for="item in 8" :key="item">
+              <ul class="comment-list" v-for="item in 4" :key="item">
                 <li>来越南旅游，看完下面7个景点已经够了</li>
                 <li>性价比高，总体超赞，有趣好玩，景色不错，</li>
                 <li>古风古巷！漫步其中，悠然自得！</li>
@@ -704,6 +705,9 @@ export default {
       district: [],
       shopDetail: [],
       isShop: 0,
+      // 文章推荐列表
+      recommendedArticles: [],
+      // 无限滚动
     };
   },
   methods: {
@@ -720,6 +724,8 @@ export default {
     console.log(res.data);
     this.district = res.data[0].district;
     this.shopDetail = res.data[0].shopDetail;
+    // 文章推荐列表
+    this.recommendedArticles = res.data[0].recommendedArticles.slice(0, 5);
   },
 };
 </script>
