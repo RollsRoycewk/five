@@ -27,14 +27,64 @@
     </header>
 
     <!-- 中间组件 -->
-    <div class="outer-container">
+    <div class="outer-container" @click="handleAllClick">
       <div class="core-wrap">
         <!-- 搜索框 -->
         <div class="search">
-          <div class="fixed-position">
-            <div>我在深圳</div>
+          <div class="fixed-position" @click="isHostCity = !isHostCity">
+            <div>{{ area }}</div>
             <div>切换城市></div>
+            <div
+              class="city_searchBox"
+              :style="{ display: isHostCity === false ? 'none' : 'block' }"
+            >
+              <div @click="hostCityValue">
+                <div class="hotCity">
+                  <p>热门出发城市</p>
+                  <div class="hotCity-list">
+                    <a href="">北京</a>
+                    <a href="">上海</a>
+                    <a href="">南京</a>
+                    <a href="">杭州</a>
+                    <a href="">深圳</a>
+                    <a href="">广州 </a>
+                    <a href="">天津</a>
+                    <a href="">成都 </a>
+                    <a href="">青岛</a>
+                    <a href="">厦门</a>
+                    <a href="">武汉</a>
+                    <a href="">沈阳</a>
+                  </div>
+                </div>
+                <ul class="hotCity-list-item">
+                  <li>常州旅游攻略</li>
+                  <li>林州旅游攻略</li>
+                  <li>冲绳县旅游攻略</li>
+                  <li>北海旅游攻略</li>
+                  <li>塘栖旅游攻略</li>
+                  <li>凤凰城旅游攻略</li>
+                  <li>长兴岛旅游攻略</li>
+                  <li>佛冈旅游攻略</li>
+                  <li>哈尔施塔特旅游攻略</li>
+                  <li>兰纳旅游攻略</li>
+                  <li>多伦旅游攻略</li>
+                  <li>安庆旅游攻略</li>
+                  <li>芽庄旅游攻略</li>
+                  <li>常州旅游攻略</li>
+                  <li>林州旅游攻略</li>
+                  <li>冲绳县旅游攻略</li>
+                  <li>北海旅游攻略</li>
+                  <li>塘栖旅游攻略</li>
+                  <li>凤凰城旅游攻略</li>
+                  <li>长兴岛旅游攻略</li>
+                  <li>佛冈旅游攻略</li>
+                  <li>哈尔施塔特旅游攻略</li>
+                  <li>兰纳旅游攻略</li>
+                </ul>
+              </div>
+            </div>
           </div>
+
           <div>
             <input
               type="text"
@@ -194,52 +244,23 @@
           <div class="banner">
             <div class="banner-top">
               <el-carousel height="414px">
-                <el-carousel-item>
+                <el-carousel-item v-for="item in banner" :key="item.id">
                   <!-- <h3 class="small">{{ item }}</h3> -->
-                  <img
-                    src="https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/baa26b15ba14d443feeb78df47160524.jpg"
-                    alt=""
-                  />
-                </el-carousel-item>
-                <el-carousel-item>
-                  <!-- <h3 class="small">{{ item }}</h3> -->
-                  <img
-                    src="https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/16409e68ea41d91b14aff95ec52105d1.jpg"
-                    alt=""
-                  />
-                </el-carousel-item>
-                <el-carousel-item>
-                  <!-- <h3 class="small">{{ item }}</h3> -->
-                  <img
-                    src="https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/f120bd9310af9b72bbac8d005f1ef146.jpg"
-                    alt=""
-                  />
+                  <img v-lazy="item.url" alt="" />
                 </el-carousel-item>
               </el-carousel>
             </div>
             <div class="swiper">
               <el-carousel height="197px">
-                <el-carousel-item>
-                  <div>
-                    <img
-                      src="https://ss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=1170822897,1825279535&fm=26&gp=0.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <div>
-                    <img
-                      src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=1232063901,3899955012&fm=26&gp=0.jpg"
-                      alt=""
-                    />
-                  </div>
-                  <div>
-                    <img
-                      src="https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=233811394,2855633515&fm=26&gp=0.jpg"
-                      alt=""
-                    />
+                <el-carousel-item
+                  v-for="smallimg in banner1"
+                  :key="smallimg.id"
+                >
+                  <div v-for="(url, index) in smallimg.urlList" :key="index">
+                    <img :src="url" alt="" />
                   </div>
                 </el-carousel-item>
-                <el-carousel-item>
+                <!-- <el-carousel-item>
                   <img
                     src="https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/baa26b15ba14d443feeb78df47160524.jpg"
                     alt=""
@@ -252,7 +273,7 @@
                     src="https://tr-osdcp.qunarzz.com/tr-osd-tr-manager/img/16409e68ea41d91b14aff95ec52105d1.jpg"
                     alt=""
                   />
-                </el-carousel-item>
+                </el-carousel-item> -->
               </el-carousel>
             </div>
           </div>
@@ -357,6 +378,13 @@
                   <div>{{ item.num }}</div>
                 </div>
               </div>
+              <img
+                v-show="isnewInfo"
+                src="../../assets/images/newInfo.gif"
+                width="100%"
+                height="80px"
+              />
+
               <!-- 底部导航 -->
               <!-- @size-change="handleSizeChange"
                 @current-change="handleCurrentChange" -->
@@ -640,6 +668,9 @@
         </dl>
       </div>
     </footer>
+
+    <!-- 返回按钮 -->
+    <div id="fixdbtn" @click="handleTop">TOP</div>
   </div>
 </template>
    
@@ -649,7 +680,10 @@ export default {
   name: "strategy",
   data() {
     return {
+      isHostCity: false,
       activeName: "first",
+      banner: [],
+      banner1: [],
       district: [],
       shopDetail: [],
       isShop: 0,
@@ -658,12 +692,35 @@ export default {
       // 无限滚动
       // 是否更新中
       flag: true,
+
+      // newInfo
+      isnewInfo: false,
+      // 地区
+      area: "北京",
     };
   },
   methods: {
     handleClick() {},
     handleShopIndex(index) {
       this.isShop = index;
+    },
+    handleTop() {
+      window.scrollTo(0, 0);
+    },
+    handleAllClick(event) {
+      if (
+        event.target.parentNode.className === "search" ||
+        event.target.parentNode.className === "fixed-position"
+      ) {
+        // console.log(event.target);
+        this.isHostCity = true;
+      } else {
+        this.isHostCity = false;
+      }
+    },
+    hostCityValue(event) {
+      console.log(event.target.innerText);
+      this.area = event.target.innerText;
     },
     // 请求列表添加数据
     async getrecommendedArticles() {
@@ -673,14 +730,28 @@ export default {
       });
       // 文章推荐列表
       if (this.recommendedArticles.length === 0) {
-        this.recommendedArticles = res.data[0].recommendedArticles.slice(0, 5);
+        this.isnewInfo = true;
+        setTimeout(() => {
+          this.recommendedArticles = res.data[0].recommendedArticles.slice(
+            0,
+            5
+          );
+          this.isnewInfo = false;
+          this.flag = true;
+        }, 1500);
       } else {
         if (this.recommendedArticles.length > 30) {
+          this.isnewInfo = false;
           return;
         } else {
-          this.recommendedArticles.push(
-            ...res.data[0].recommendedArticles.slice(5, 10)
-          );
+          this.isnewInfo = true;
+          setTimeout(() => {
+            this.recommendedArticles.push(
+              ...res.data[0].recommendedArticles.slice(5, 10)
+            );
+            this.flag = true;
+            this.isnewInfo = false;
+          }, 1500);
         }
       }
     },
@@ -690,18 +761,20 @@ export default {
       url: "http://wangkai.zone:8082/ctrip",
       method: "GET",
     });
-    console.log(res.data);
+    // console.log(res.d  ata);
     this.district = res.data[0].district;
     this.shopDetail = res.data[0].shopDetail;
+    this.banner = res.data[0].banner;
+    this.banner1 = res.data[0].banner1;
     // 文章推荐列表
     // this.recommendedArticles = res.data[0].recommendedArticles.slice(0, 5);
     this.getrecommendedArticles();
-
     // 无限滚动功能实现
     document.onscroll = () => {
       let { clientHeight, offsetHeight } = document.documentElement;
       // console.log("计算啊", offsetHeight - clientHeight - window.pageYOffset);
-      if (offsetHeight - clientHeight - window.pageYOffset < 627) {
+      if (offsetHeight - clientHeight - window.pageYOffset < 627 && this.flag) {
+        this.flag = false;
         this.getrecommendedArticles();
       }
     };
@@ -780,6 +853,33 @@ export default {
       justify-content: left;
       align-items: center;
       .fixed-position {
+        .city_searchBox {
+          padding: 14px;
+          position: absolute;
+          top: 39px;
+          left: -1px;
+          width: 350px;
+          height: 567px;
+          border: 1px solid #999;
+          background-color: #fff;
+          z-index: 10;
+          .hotCity {
+            border-bottom: 1px solid #e6e6e6;
+            padding-bottom: 10px;
+            p {
+              font-size: 12px;
+              color: #444;
+            }
+            .hotCity-list {
+              display: flex;
+              flex-wrap: wrap;
+              a {
+                margin-right: 8px;
+              }
+            }
+          }
+        }
+        position: relative;
         padding: 0 10px;
         display: flex;
         width: 230px;
@@ -798,6 +898,7 @@ export default {
           color: #999;
         }
       }
+
       .search-input {
         width: 546px;
         height: 40px;
@@ -1237,5 +1338,24 @@ export default {
       }
     }
   }
+}
+
+// 返回按钮
+#fixdbtn {
+  position: fixed;
+  border-left: 50px solid transparent;
+  border-right: 50px solid transparent;
+  // border-top: 50px solid transparent;
+  // border-left: none;
+  // border-right: none;
+  border-top: none;
+  border-bottom: 50px solid #00a7e1;
+  width: 50px;
+  height: 50px;
+  // background-color: #00a7e1;
+  bottom: 10px;
+  right: 10px;
+  line-height: 50px;
+  text-align: center;
 }
 </style>
