@@ -5,6 +5,7 @@ import VueRouter from "vue-router";
 
 const Home = () => import(/* webpackChunkName: "Home" */ "../views/home");
 const Personal = () => import(/* webpackChunkName: "Personal" */ "../views/Personal");
+const Hotel = () => import(/* webpackChunkName: "Personal" */ "../views/Hotel");
 
 Vue.use(VueRouter);
 
@@ -37,6 +38,11 @@ const router = new VueRouter({
       name: 'personal',
       path: "/personal",
       component: Personal,
+    },
+    {
+      name: 'hotel',
+      path: "/hotel",
+      component: Hotel,
     },
   ],
 });

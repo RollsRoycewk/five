@@ -63,8 +63,8 @@
     <!-- 导航栏 -->
     <div class="nav">
       <ul>
-        <li><a href="#">首页</a></li>
-        <li><a href="#">酒店</a></li>
+        <li><a href="/">首页</a></li>
+        <li><a href="/hotel">酒店</a></li>
         <li><a href="#">旅游</a></li>
         <li><a href="#">跟团游</a></li>
         <li><a href="#">自由行</a></li>
@@ -116,7 +116,7 @@ export default {
 </script>
 
 <style lang="less">
-html{
+html {
   position: relative;
 }
 // 头
