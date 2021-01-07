@@ -110,7 +110,12 @@
         <el-tabs v-model="travelName">
           <el-tab-pane class="hot" label="热门" name="first">
             <ul>
-              <li v-for="(destCity, index) in traveInfo.destCitys" :key="index">
+              <li
+                v-for="(destCity, index) in traveInfo.destCitys"
+                :class="destCity.nme === traveInfo.name ? 'checked' : ''"
+                :key="index"
+                @click="getTravelInfo(destCity.nme)"
+              >
                 {{ destCity.nme }}
               </li>
             </ul>
@@ -148,9 +153,9 @@
       <!-- 酒店 -->
       <div class="hotelContainer">
         <el-tabs v-model="hotelName">
-          <el-tab-pane class="foreignHotel" label="海外酒店" name="first">
+          <el-tab-pane class="foreign" label="海外酒店" name="first">
             <!-- 左边的文章列表 -->
-            <div class="left">
+            <div class="left" v-if="hotelInfo">
               <div v-if="hotelInfo.tagUp">
                 <h3>{{ hotelInfo.tagUp.nme }}</h3>
                 <ul>
@@ -175,6 +180,16 @@
               </div>
             </div>
             <div class="right">
+              <ul>
+                <li
+                  v-for="(hotel, index) in hotelInfo.tabs"
+                  :class="hotel.tabNme === hotelInfo.name ? 'checked' : ''"
+                  :key="index"
+                  @click="getHotelInfo(hotel.tabNme)"
+                >
+                  {{ hotel.tabNme }}
+                </li>
+              </ul>
               <div class="list">
                 <div class="item">
                   <div v-for="(item, index) in hotelInfo.prdLst" :key="index">
@@ -238,6 +253,214 @@
           <el-tab-pane label="国内特价机票" name="second"
             >国内特价机票</el-tab-pane
           >
+        </el-tabs>
+      </div>
+      <!-- 租车 -->
+      <div class="hotelContainer tabList">
+        <el-tabs v-model="hotelName">
+          <el-tab-pane class="foreign" label="境外租车" name="first">
+            <!-- 左边的文章列表 -->
+            <div class="left" v-if="hotelInfo">
+              <p>热门城市</p>
+              <div>
+                <span class="entrance-item" title="洛杉矶">
+                  <a
+                    href="http://car.ctrip.com/city/city347?channelID=16022"
+                    target="_blank"
+                  >
+                    洛杉矶
+                  </a>
+
+                  <span class="icon_hot"></span>
+                </span>
+
+                <span class="entrance-item" title="旧金山">
+                  <a
+                    href="http://car.ctrip.com/city/city313?channelID=16022"
+                    target="_blank"
+                  >
+                    旧金山
+                  </a>
+
+                  <span class="icon_hot"></span>
+                </span>
+
+                <span class="entrance-item" title="墨尔本">
+                  <a
+                    href="http://car.ctrip.com/city/city358?channelID=16022"
+                    target="_blank"
+                  >
+                    墨尔本
+                  </a>
+                </span>
+
+                <span class="entrance-item" title="纽约">
+                  <a
+                    href="http://car.ctrip.com/city/city633?channelID=16022"
+                    target="_blank"
+                  >
+                    纽约
+                  </a>
+                </span>
+
+                <span class="entrance-item" title="曼谷">
+                  <a
+                    href="http://car.ctrip.com/city/city359?channelID=16022"
+                    target="_blank"
+                  >
+                    曼谷
+                  </a>
+                </span>
+
+                <span class="entrance-item" title="基督城">
+                  <a
+                    href="http://car.ctrip.com/city/city7505?channelID=16022"
+                    target="_blank"
+                  >
+                    基督城
+                  </a>
+
+                  <span class="icon_hot"></span>
+                </span>
+
+                <span class="entrance-item" title="普吉岛">
+                  <a
+                    href="http://car.ctrip.com/city/city725?channelID=16022"
+                    target="_blank"
+                  >
+                    普吉岛
+                  </a>
+
+                  <span class="icon_hot"></span>
+                </span>
+
+                <span class="entrance-item" title="温哥华">
+                  <a
+                    href="http://car.ctrip.com/city/city476?channelID=16022"
+                    target="_blank"
+                  >
+                    温哥华
+                  </a>
+                </span>
+
+                <span class="entrance-item" title="悉尼">
+                  <a
+                    href="http://car.ctrip.com/city/city501?channelID=16022"
+                    target="_blank"
+                  >
+                    悉尼
+                  </a>
+                </span>
+
+                <span class="entrance-item" title="奥克兰">
+                  <a
+                    href="http://car.ctrip.com/city/city678?channelID=16022"
+                    target="_blank"
+                  >
+                    奥克兰
+                  </a>
+
+                  <span class="icon_hot"></span>
+                </span>
+
+                <span class="entrance-item" title="拉斯维加斯">
+                  <a
+                    href="http://car.ctrip.com/city/city675?channelID=16022"
+                    target="_blank"
+                  >
+                    拉斯维加斯
+                  </a>
+                </span>
+
+                <span class="entrance-item" title="西雅图">
+                  <a
+                    href="http://car.ctrip.com/city/city511?channelID=16022"
+                    target="_blank"
+                  >
+                    西雅图
+                  </a>
+                </span>
+
+                <span class="entrance-item" title="伦敦">
+                  <a
+                    href="http://car.ctrip.com/city/city338?channelID=16022"
+                    target="_blank"
+                  >
+                    伦敦
+                  </a>
+                </span>
+
+                <span class="entrance-item" title="法兰克福">
+                  <a
+                    href="http://car.ctrip.com/city/city250?channelID=16022"
+                    target="_blank"
+                  >
+                    法兰克福
+                  </a>
+                </span>
+
+                <span class="entrance-item" title="多伦多">
+                  <a
+                    href="http://car.ctrip.com/city/city461?channelID=16022"
+                    target="_blank"
+                  >
+                    多伦多
+                  </a>
+                </span>
+
+                <span class="entrance-item" title="巴黎">
+                  <a
+                    href="http://car.ctrip.com/city/city192?channelID=16022"
+                    target="_blank"
+                  >
+                    巴黎
+                  </a>
+                </span>
+
+                <span class="entrance-item" title="迪拜">
+                  <a
+                    href="http://car.ctrip.com/city/city220?channelID=16022"
+                    target="_blank"
+                  >
+                    迪拜
+                  </a>
+                </span>
+              </div>
+            </div>
+            <div class="right">
+              <ul>
+                <li
+                  v-for="(hotel, index) in hotelInfo.tabs"
+                  :class="hotel.tabNme === hotelInfo.name ? 'checked' : ''"
+                  :key="index"
+                  @click="getHotelInfo(hotel.tabNme)"
+                >
+                  {{ hotel.tabNme }}
+                </li>
+              </ul>
+              <div class="list">
+                <div class="item">
+                  <div v-for="(item, index) in hotelInfo.prdLst" :key="index">
+                    <a :href="item.lnk">
+                      <img :src="item.img" alt="" />
+                      <div class="mask">
+                        <span>{{ item.nme }}</span>
+                        <span>￥{{ item.price.amt }}/人起</span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="recommend">
+                  <img
+                    :src="hotelInfo.adLst ? hotelInfo.adLst[0].img : ''"
+                    alt=""
+                  />
+                </div>
+              </div>
+            </div>
+          </el-tab-pane>
+          <el-tab-pane label="境外接送机" name="second">境外接送机</el-tab-pane>
+          <el-tab-pane label="国内租车" name="third">国内租车</el-tab-pane>
         </el-tabs>
       </div>
       <!-- 底部导航 -->
@@ -342,9 +565,12 @@ export default {
       traveInfo: {
         destCitys: [],
         tabContentLst: [],
+        name: '',
       },
       // 酒店列表
-      hotelInfo: {},
+      hotelInfo: {
+        name: '',
+      },
       // 机票列表详情
       curentIndex: 0,
       ticketInfo: {},
@@ -370,18 +596,23 @@ export default {
       );
     },
     // 获取旅游数据
-    getTravelInfo() {
-      getTravelList('http://8.129.66.189:8081/home/travelList').then(
-        (result) => {
-          this.traveInfo = result[0].travelist;
-        }
-      );
+    getTravelInfo(name) {
+      this.traveInfo.name = name;
+      getTravelList(
+        `http://8.129.66.189:8081/home/travelList?name=${name}`
+      ).then((result) => {
+        this.traveInfo = result[0];
+      });
     },
     // 获取酒店数据
-    getHotelInfo() {
-      getHotelList('http://8.129.66.189:8081/home/hotelList').then((result) => {
-        this.hotelInfo = result[0];
-      });
+    getHotelInfo(name) {
+      this.hotelInfo.name = name;
+      getHotelList(`http://8.129.66.189:8081/home/hotelList?name=${name}`).then(
+        (result) => {
+          console.log(result);
+          this.hotelInfo = result[0];
+        }
+      );
     },
     // 获取机票数据
     getHotTicketInfo(name) {
@@ -416,8 +647,8 @@ export default {
   },
   mounted() {
     this.getBunnerInfo();
-    this.getTravelInfo();
-    this.getHotelInfo();
+    this.getTravelInfo('境内');
+    this.getHotelInfo('热门城市');
     this.getHotTicketInfo('热门往返');
   },
 };
@@ -469,6 +700,7 @@ export default {
           flex-direction: column;
           justify-content: space-around;
           li {
+            cursor: pointer;
             flex-grow: 1;
             line-height: 42px;
             border-left: 4px solid #2577e3;
@@ -518,6 +750,7 @@ export default {
         width: 1140px;
         margin: 0 auto;
         li {
+          cursor: pointer;
           width: 50px;
           height: 20px;
           line-height: 20px;
@@ -593,12 +826,13 @@ export default {
     }
   }
   // 酒店
-  .hotelContainer {
+  .hotelContainer,
+  .tabList {
     width: 1180px;
-    height: 414px;
+    height: 434px;
     margin: 0 auto;
     background-color: white;
-    .foreignHotel {
+    .foreign {
       display: flex;
       .left {
         width: 227px;
@@ -625,12 +859,33 @@ export default {
       }
       .right {
         border-left: 1px solid #dedede;
+        ul {
+          display: flex;
+          width: 1140px;
+          margin-top: 10px;
+          margin-left: 20px;
+          li {
+            cursor: pointer;
+            width: 50px;
+            height: 20px;
+            line-height: 20px;
+            text-align: center;
+            border-radius: 5px;
+            color: #3983e5;
+            font-size: 12px;
+            margin-right: 10px;
+            &.checked,
+            &:hover {
+              color: #fff;
+              background-color: #3983e5;
+            }
+          }
+        }
         .list {
           width: 953px;
-          height: 375px;
+          height: 366px;
           display: flex;
           padding-top: 15px;
-          padding-bottom: 10px;
           .item {
             width: 715px;
             padding-left: 20px;
@@ -741,6 +996,20 @@ export default {
             color: white;
             text-align: center;
           }
+        }
+      }
+    }
+  }
+  // 租车
+  .hotelContainer {
+    .foreign {
+      .left {
+        p {
+          width: 227px;
+          height: 30px;
+          line-height: 30px;
+          font-size: 14px;
+          font-weight: bold;
         }
       }
     }
