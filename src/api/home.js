@@ -78,3 +78,44 @@ export const getHotTicket = function (url, data = {}, method = "GET",) {
       });
   });
 };
+
+
+
+/* 
+  首页租车数据
+*/
+export const getCarList = function (url, data = {}, method = "GET",) {
+  return new Promise((resolve, reject) => {
+    axios({
+      url,
+      method,
+      data
+    })
+      .then((result) => {
+        resolve(result.data);
+      })
+      .catch((err) => {
+        reject(err);
+      });
+  });
+};
+
+
+/* 
+  首页租车数据
+*/
+export const getLeaveCountry = function (url, data = {}, method = "GET",) {
+  return new Promise((resolve, reject) => {
+    axios({
+      url,
+      method,
+      data
+    })
+      .then((result) => {
+        resolve(result.data);
+      })
+      .catch((err) => {
+        reject(err);
+      });
+  });
+};
