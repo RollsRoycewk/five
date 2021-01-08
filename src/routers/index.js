@@ -4,6 +4,11 @@ import VueRouter from "vue-router";
 // import Home from "../views/Home";
 
 const Home = () => import(/* webpackChunkName: "Home" */ "../views/home");
+const Minsu = () => import(/* webpackChunkName: "Home" */ "../views/Minsu");
+const DetileItem = () =>
+  import(/* webpackChunkName: "Home" */ "../views/DetileItem");
+const CityDetile = () =>
+  import(/* webpackChunkName: "Home" */ "../views/CityDetile");
 
 Vue.use(VueRouter);
 
@@ -32,7 +37,29 @@ const router = new VueRouter({
       path: "/",
       component: Home,
     },
+    {
+      name: "minsu",
+      path: "/minsu",
+      component: Minsu,
+    },
+    {
+      name: "CityDetile",
+      path: "/cityDetile",
+      component: CityDetile,
+    },
+    {
+      name: "DetileItem",
+      path: "/detileItem",
+      component: DetileItem,
+    },
+    {
+      path: "/home",
+      component: Home,
+    },
   ],
+  scrollBehavior() {
+    return { x: 0, y: 0 };
+  },
 });
 
 export default router;

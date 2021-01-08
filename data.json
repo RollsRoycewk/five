@@ -1,0 +1,454 @@
+{
+  "posts": [
+    [
+      {
+        "id": "0",
+        "bedCount": 7,
+        "cityId": 48,
+        "cityName": "北京",
+        "commentScore": 5,
+        "defaultPicture": "https://pic.tujia.com/upload/landlordunit/day_191018/thumb/201910181122113655_600_400.jpg",
+        "finalPrice": 2384,
+        "houseName": "怀柔青萌民宿*怀北国际滑雪场*红螺寺*地暖*室内私汤*温泉*公司团建*亲子活动*家庭聚会",
+        "theHouseType": "四合院"
+      },
+      {
+        "id": "1",
+        "bedCount": 7,
+        "cityId": 48,
+        "cityName": "上海",
+        "commentScore": 5,
+        "defaultPicture": "https://pic.tujia.com/upload/landlordunit/day_200909/thumb/202009091757095645_600_400.jpg",
+        "finalPrice": 2384,
+        "houseName": "昌平33号民宿/静之湖水长城/真火壁炉四合院/上院",
+        "theHouseType": "四合院"
+      }
+    ],
+    {
+      "beijin": {
+        "data": [
+          {
+            "id": "0",
+            "bedCount": 7,
+            "cityId": 48,
+            "cityName": "北京",
+            "commentScore": 5,
+            "defaultPicture": "https://pic.tujia.com/upload/landlordunit/day_191018/thumb/201910181122113655_600_400.jpg",
+            "finalPrice": 2384,
+            "houseName": "怀柔青萌民宿*怀北国际滑雪场*红螺寺*地暖*室内私汤*温泉*公司团建*亲子活动*家庭聚会",
+            "theHouseType": "四合院"
+          },
+          {
+            "id": "1",
+            "bedCount": 7,
+            "cityId": 48,
+            "cityName": "北京",
+            "commentScore": 5,
+            "defaultPicture": "https://pic.tujia.com/upload/landlordunit/day_200909/thumb/202009091757095645_600_400.jpg",
+            "finalPrice": 2384,
+            "houseName": "昌平33号民宿/静之湖水长城/真火壁炉四合院/上院",
+            "theHouseType": "四合院"
+          },
+          {
+            "id": "2",
+            "bedCount": 7,
+            "cityId": 48,
+            "cityName": "北京",
+            "commentScore": 5,
+            "defaultPicture": "https://pic.tujia.com/upload/landlordunit/day_191018/thumb/201910181122113655_600_400.jpg",
+            "finalPrice": 2384,
+            "houseName": "怀柔青萌民宿*怀北国际滑雪场*红螺寺*地暖*室内私汤*温泉*公司团建*亲子活动*家庭聚会",
+            "theHouseType": "四合院"
+          },
+          {
+            "id": "3",
+            "bedCount": 7,
+            "cityId": 48,
+            "cityName": "北京",
+            "commentScore": 5,
+            "defaultPicture": "https://pic.tujia.com/upload/landlordunit/day_200909/thumb/202009091757095645_600_400.jpg",
+            "finalPrice": 2384,
+            "houseName": "昌平33号民宿/静之湖水长城/真火壁炉四合院/上院",
+            "theHouseType": "四合院"
+          },
+          {
+            "id": "0",
+            "bedCount": 7,
+            "cityId": 48,
+            "cityName": "北京",
+            "commentScore": 5,
+            "defaultPicture": "https://pic.tujia.com/upload/landlordunit/day_191018/thumb/201910181122113655_600_400.jpg",
+            "finalPrice": 2384,
+            "houseName": "怀柔青萌民宿*怀北国际滑雪场*红螺寺*地暖*室内私汤*温泉*公司团建*亲子活动*家庭聚会",
+            "theHouseType": "四合院"
+          },
+          {
+            "id": "1",
+            "bedCount": 7,
+            "cityId": 48,
+            "cityName": "北京",
+            "commentScore": 5,
+            "defaultPicture": "https://pic.tujia.com/upload/landlordunit/day_200909/thumb/202009091757095645_600_400.jpg",
+            "finalPrice": 2384,
+            "houseName": "昌平33号民宿/静之湖水长城/真火壁炉四合院/上院",
+            "theHouseType": "四合院"
+          }
+        ]
+      },
+      "shanghai": {
+        "data": [
+          {
+            "id": "2",
+            "bedCount": 7,
+            "cityId": 23,
+            "cityName": "上海",
+            "commentScore": 5,
+            "defaultPicture": "https://pic.tujia.com/upload/landlordunit/day_200227/thumb/202002271756101403_600_400.jpg",
+            "finalPrice": 2384,
+            "houseName": "月租免费停车～中央暖气～厨房设施齐全～外滩近地铁站摩洛哥三床6人套房",
+            "theHouseType": "四合院"
+          },
+          {
+            "id": "3",
+            "bedCount": 7,
+            "cityId": 23,
+            "cityName": "上海",
+            "commentScore": 5,
+            "defaultPicture": "https://pic.tujia.com/upload/landlordunit/day_200702/thumb/202007021844466456_600_400.jpg",
+            "finalPrice": 2384,
+            "houseName": "绿码地区安心住！看日落大露台/投影/上海11号线兆丰路",
+            "theHouseType": "Loft复式"
+          },
+          {
+            "id": "4",
+            "bedCount": 7,
+            "cityId": 23,
+            "cityName": "上海",
+            "commentScore": 5,
+            "defaultPicture": "https://pic.tujia.com/upload/landlordunit/day_200227/thumb/202002271756101403_600_400.jpg",
+            "finalPrice": 2384,
+            "houseName": "月租免费停车～中央暖气～厨房设施齐全～外滩近地铁站摩洛哥三床6人套房",
+            "theHouseType": "四合院"
+          },
+          {
+            "id": "5",
+            "bedCount": 7,
+            "cityId": 23,
+            "cityName": "上海",
+            "commentScore": 5,
+            "defaultPicture": "https://pic.tujia.com/upload/landlordunit/day_200702/thumb/202007021844466456_600_400.jpg",
+            "finalPrice": 2384,
+            "houseName": "绿码地区安心住！看日落大露台/投影/上海11号线兆丰路",
+            "theHouseType": "Loft复式"
+          },
+          {
+            "id": "6",
+            "bedCount": 7,
+            "cityId": 23,
+            "cityName": "上海",
+            "commentScore": 5,
+            "defaultPicture": "https://pic.tujia.com/upload/landlordunit/day_200227/thumb/202002271756101403_600_400.jpg",
+            "finalPrice": 2384,
+            "houseName": "月租免费停车～中央暖气～厨房设施齐全～外滩近地铁站摩洛哥三床6人套房",
+            "theHouseType": "四合院"
+          },
+          {
+            "id": "7",
+            "bedCount": 7,
+            "cityId": 23,
+            "cityName": "上海",
+            "commentScore": 5,
+            "defaultPicture": "https://pic.tujia.com/upload/landlordunit/day_200702/thumb/202007021844466456_600_400.jpg",
+            "finalPrice": 2384,
+            "houseName": "绿码地区安心住！看日落大露台/投影/上海11号线兆丰路",
+            "theHouseType": "Loft复式"
+          }
+        ]
+      },
+      "id": 2
+    },
+    {
+      "beijin": [
+        {
+          "id": "0",
+          "bedCount": 7,
+          "cityId": 48,
+          "cityName": "北京",
+          "commentScore": 5,
+          "defaultPicture": "https://pic.tujia.com/upload/landlordunit/day_191018/thumb/201910181122113655_600_400.jpg",
+          "finalPrice": 2384,
+          "houseName": "怀柔青萌民宿*怀北国际滑雪场*红螺寺*地暖*室内私汤*温泉*公司团建*亲子活动*家庭聚会",
+          "theHouseType": "四合院"
+        },
+        {
+          "id": "1",
+          "bedCount": 7,
+          "cityId": 48,
+          "cityName": "北京",
+          "commentScore": 5,
+          "defaultPicture": "https://pic.tujia.com/upload/landlordunit/day_200909/thumb/202009091757095645_600_400.jpg",
+          "finalPrice": 2384,
+          "houseName": "昌平33号民宿/静之湖水长城/真火壁炉四合院/上院",
+          "theHouseType": "四合院"
+        },
+        {
+          "id": "2",
+          "bedCount": 7,
+          "cityId": 48,
+          "cityName": "北京",
+          "commentScore": 5,
+          "defaultPicture": "https://pic.tujia.com/upload/landlordunit/day_191018/thumb/201910181122113655_600_400.jpg",
+          "finalPrice": 2384,
+          "houseName": "怀柔青萌民宿*怀北国际滑雪场*红螺寺*地暖*室内私汤*温泉*公司团建*亲子活动*家庭聚会",
+          "theHouseType": "四合院"
+        },
+        {
+          "id": "3",
+          "bedCount": 7,
+          "cityId": 48,
+          "cityName": "北京",
+          "commentScore": 5,
+          "defaultPicture": "https://pic.tujia.com/upload/landlordunit/day_200909/thumb/202009091757095645_600_400.jpg",
+          "finalPrice": 2384,
+          "houseName": "昌平33号民宿/静之湖水长城/真火壁炉四合院/上院",
+          "theHouseType": "四合院"
+        },
+        {
+          "id": "0",
+          "bedCount": 7,
+          "cityId": 48,
+          "cityName": "北京",
+          "commentScore": 5,
+          "defaultPicture": "https://pic.tujia.com/upload/landlordunit/day_191018/thumb/201910181122113655_600_400.jpg",
+          "finalPrice": 2384,
+          "houseName": "怀柔青萌民宿*怀北国际滑雪场*红螺寺*地暖*室内私汤*温泉*公司团建*亲子活动*家庭聚会",
+          "theHouseType": "四合院"
+        },
+        {
+          "id": "1",
+          "bedCount": 7,
+          "cityId": 48,
+          "cityName": "北京",
+          "commentScore": 5,
+          "defaultPicture": "https://pic.tujia.com/upload/landlordunit/day_200909/thumb/202009091757095645_600_400.jpg",
+          "finalPrice": 2384,
+          "houseName": "昌平33号民宿/静之湖水长城/真火壁炉四合院/上院",
+          "theHouseType": "四合院"
+        }
+      ],
+      "shanghai": [
+        {
+          "id": "2",
+          "bedCount": 7,
+          "cityId": 23,
+          "cityName": "上海",
+          "commentScore": 5,
+          "defaultPicture": "https://pic.tujia.com/upload/landlordunit/day_200227/thumb/202002271756101403_600_400.jpg",
+          "finalPrice": 2384,
+          "houseName": "月租免费停车～中央暖气～厨房设施齐全～外滩近地铁站摩洛哥三床6人套房",
+          "theHouseType": "四合院"
+        },
+        {
+          "id": "3",
+          "bedCount": 7,
+          "cityId": 23,
+          "cityName": "上海",
+          "commentScore": 5,
+          "defaultPicture": "https://pic.tujia.com/upload/landlordunit/day_200702/thumb/202007021844466456_600_400.jpg",
+          "finalPrice": 2384,
+          "houseName": "绿码地区安心住！看日落大露台/投影/上海11号线兆丰路",
+          "theHouseType": "Loft复式"
+        },
+        {
+          "id": "4",
+          "bedCount": 7,
+          "cityId": 23,
+          "cityName": "上海",
+          "commentScore": 5,
+          "defaultPicture": "https://pic.tujia.com/upload/landlordunit/day_200227/thumb/202002271756101403_600_400.jpg",
+          "finalPrice": 2384,
+          "houseName": "月租免费停车～中央暖气～厨房设施齐全～外滩近地铁站摩洛哥三床6人套房",
+          "theHouseType": "四合院"
+        },
+        {
+          "id": "5",
+          "bedCount": 7,
+          "cityId": 23,
+          "cityName": "上海",
+          "commentScore": 5,
+          "defaultPicture": "https://pic.tujia.com/upload/landlordunit/day_200702/thumb/202007021844466456_600_400.jpg",
+          "finalPrice": 2384,
+          "houseName": "绿码地区安心住！看日落大露台/投影/上海11号线兆丰路",
+          "theHouseType": "Loft复式"
+        },
+        {
+          "id": "6",
+          "bedCount": 7,
+          "cityId": 23,
+          "cityName": "上海",
+          "commentScore": 5,
+          "defaultPicture": "https://pic.tujia.com/upload/landlordunit/day_200227/thumb/202002271756101403_600_400.jpg",
+          "finalPrice": 2384,
+          "houseName": "月租免费停车～中央暖气～厨房设施齐全～外滩近地铁站摩洛哥三床6人套房",
+          "theHouseType": "四合院"
+        },
+        {
+          "id": "7",
+          "bedCount": 7,
+          "cityId": 23,
+          "cityName": "上海",
+          "commentScore": 5,
+          "defaultPicture": "https://pic.tujia.com/upload/landlordunit/day_200702/thumb/202007021844466456_600_400.jpg",
+          "finalPrice": 2384,
+          "houseName": "绿码地区安心住！看日落大露台/投影/上海11号线兆丰路",
+          "theHouseType": "Loft复式"
+        }
+      ],
+      "id": 3
+    }
+  ],
+  "comments": [
+    {
+      "beijin": [
+        {
+          "id": "0",
+          "bedCount": 7,
+          "cityId": 48,
+          "cityName": "北京",
+          "commentScore": 5,
+          "defaultPicture": "https://pic.tujia.com/upload/landlordunit/day_191018/thumb/201910181122113655_600_400.jpg",
+          "finalPrice": 2384,
+          "houseName": "怀柔青萌民宿*怀北国际滑雪场*红螺寺*地暖*室内私汤*温泉*公司团建*亲子活动*家庭聚会",
+          "theHouseType": "四合院"
+        },
+        {
+          "id": "1",
+          "bedCount": 7,
+          "cityId": 48,
+          "cityName": "北京",
+          "commentScore": 5,
+          "defaultPicture": "https://pic.tujia.com/upload/landlordunit/day_200909/thumb/202009091757095645_600_400.jpg",
+          "finalPrice": 2384,
+          "houseName": "昌平33号民宿/静之湖水长城/真火壁炉四合院/上院",
+          "theHouseType": "四合院"
+        },
+        {
+          "id": "2",
+          "bedCount": 7,
+          "cityId": 48,
+          "cityName": "北京",
+          "commentScore": 5,
+          "defaultPicture": "https://pic.tujia.com/upload/landlordunit/day_191018/thumb/201910181122113655_600_400.jpg",
+          "finalPrice": 2384,
+          "houseName": "怀柔青萌民宿*怀北国际滑雪场*红螺寺*地暖*室内私汤*温泉*公司团建*亲子活动*家庭聚会",
+          "theHouseType": "四合院"
+        },
+        {
+          "id": "3",
+          "bedCount": 7,
+          "cityId": 48,
+          "cityName": "北京",
+          "commentScore": 5,
+          "defaultPicture": "https://pic.tujia.com/upload/landlordunit/day_200909/thumb/202009091757095645_600_400.jpg",
+          "finalPrice": 2384,
+          "houseName": "昌平33号民宿/静之湖水长城/真火壁炉四合院/上院",
+          "theHouseType": "四合院"
+        },
+        {
+          "id": "0",
+          "bedCount": 7,
+          "cityId": 48,
+          "cityName": "北京",
+          "commentScore": 5,
+          "defaultPicture": "https://pic.tujia.com/upload/landlordunit/day_191018/thumb/201910181122113655_600_400.jpg",
+          "finalPrice": 2384,
+          "houseName": "怀柔青萌民宿*怀北国际滑雪场*红螺寺*地暖*室内私汤*温泉*公司团建*亲子活动*家庭聚会",
+          "theHouseType": "四合院"
+        },
+        {
+          "id": "1",
+          "bedCount": 7,
+          "cityId": 48,
+          "cityName": "北京",
+          "commentScore": 5,
+          "defaultPicture": "https://pic.tujia.com/upload/landlordunit/day_200909/thumb/202009091757095645_600_400.jpg",
+          "finalPrice": 2384,
+          "houseName": "昌平33号民宿/静之湖水长城/真火壁炉四合院/上院",
+          "theHouseType": "四合院"
+        }
+      ],
+      "shanghai": [
+        {
+          "id": "2",
+          "bedCount": 7,
+          "cityId": 23,
+          "cityName": "上海",
+          "commentScore": 5,
+          "defaultPicture": "https://pic.tujia.com/upload/landlordunit/day_200227/thumb/202002271756101403_600_400.jpg",
+          "finalPrice": 2384,
+          "houseName": "月租免费停车～中央暖气～厨房设施齐全～外滩近地铁站摩洛哥三床6人套房",
+          "theHouseType": "四合院"
+        },
+        {
+          "id": "3",
+          "bedCount": 7,
+          "cityId": 23,
+          "cityName": "上海",
+          "commentScore": 5,
+          "defaultPicture": "https://pic.tujia.com/upload/landlordunit/day_200702/thumb/202007021844466456_600_400.jpg",
+          "finalPrice": 2384,
+          "houseName": "绿码地区安心住！看日落大露台/投影/上海11号线兆丰路",
+          "theHouseType": "Loft复式"
+        },
+        {
+          "id": "4",
+          "bedCount": 7,
+          "cityId": 23,
+          "cityName": "上海",
+          "commentScore": 5,
+          "defaultPicture": "https://pic.tujia.com/upload/landlordunit/day_200227/thumb/202002271756101403_600_400.jpg",
+          "finalPrice": 2384,
+          "houseName": "月租免费停车～中央暖气～厨房设施齐全～外滩近地铁站摩洛哥三床6人套房",
+          "theHouseType": "四合院"
+        },
+        {
+          "id": "5",
+          "bedCount": 7,
+          "cityId": 23,
+          "cityName": "上海",
+          "commentScore": 5,
+          "defaultPicture": "https://pic.tujia.com/upload/landlordunit/day_200702/thumb/202007021844466456_600_400.jpg",
+          "finalPrice": 2384,
+          "houseName": "绿码地区安心住！看日落大露台/投影/上海11号线兆丰路",
+          "theHouseType": "Loft复式"
+        },
+        {
+          "id": "6",
+          "bedCount": 7,
+          "cityId": 23,
+          "cityName": "上海",
+          "commentScore": 5,
+          "defaultPicture": "https://pic.tujia.com/upload/landlordunit/day_200227/thumb/202002271756101403_600_400.jpg",
+          "finalPrice": 2384,
+          "houseName": "月租免费停车～中央暖气～厨房设施齐全～外滩近地铁站摩洛哥三床6人套房",
+          "theHouseType": "四合院"
+        },
+        {
+          "id": "7",
+          "bedCount": 7,
+          "cityId": 23,
+          "cityName": "上海",
+          "commentScore": 5,
+          "defaultPicture": "https://pic.tujia.com/upload/landlordunit/day_200702/thumb/202007021844466456_600_400.jpg",
+          "finalPrice": 2384,
+          "houseName": "绿码地区安心住！看日落大露台/投影/上海11号线兆丰路",
+          "theHouseType": "Loft复式"
+        }
+      ],
+      "id": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

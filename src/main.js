@@ -10,6 +10,7 @@ import router from "./routers";
 
 // 引入样式重置(王凯)
 import "./styles/reset.css";
+import "./styles/clearfix.css";
 
 Vue.config.productionTip = false;
 

@@ -14,5 +14,17 @@ module.exports = {
         "@store": path.resolve(__dirname, "src/store"),
       },
     },
+    devServer: {
+      proxy: {
+        "/api": {
+          target: "http://localhost:3001",
+          ws: true,
+          changeOrigin: true,
+          pathRewrite: {
+            "^/api": "",
+          },
+        },
+      },
+    },
   },
 };
