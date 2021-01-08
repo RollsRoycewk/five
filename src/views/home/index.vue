@@ -713,7 +713,7 @@ export default {
         div {
           width: 220px;
           height: 160px;
-          background-color: #bfa;
+          // background-color: #bfa;
           position: relative;
           .mask {
             width: 112px;
@@ -823,7 +823,7 @@ export default {
             div {
               width: 220px;
               height: 165px;
-              background-color: #bfa;
+              // background-color: #bfa;
               position: relative;
               overflow: hidden;
               .mask {
@@ -967,15 +967,26 @@ export default {
               margin-left: 10px;
               height: 200px;
               background-color: #fff;
+              img {
+                transition: transform 0.3s;
+              }
+              &:hover {
+                box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+                img {
+                  transform: scale(1.1);
+                }
+              }
               p {
+                margin-top: 5px;
+                padding: 0 10px;
                 white-space: nowrap;
                 overflow: hidden;
                 text-overflow: ellipsis;
               }
               div {
                 margin: 0;
-                height: 22px;
-                line-height: 22px;
+                height: 25px;
+                line-height: 25px;
                 display: flex;
                 justify-content: space-between;
               }
