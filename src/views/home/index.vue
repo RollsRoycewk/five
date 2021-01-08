@@ -1,10 +1,17 @@
 <template>
-  <div>大家好,我是付策群</div>
+  <div>
+    <button @click="toTour">toTour</button>
+  </div>
 </template>
 
 <script>
 export default {
   name: "Home",
+  methods: {
+    toTour() {
+      this.$router.push("/tour");
+    }
+  }
 };
 </script>
 
