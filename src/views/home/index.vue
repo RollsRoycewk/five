@@ -5,7 +5,7 @@
       <div class="bunnerContainer">
         <el-carousel trigger="click" :interval="5000" height="340px">
           <el-carousel-item v-for="bunner in bunnerList" :key="bunner._id">
-            <img :src="bunner.imgesUrl" :alt="bunner.imgesName" />
+            <img v-lazy="bunner.imgesUrl" :alt="bunner.imgesName" />
           </el-carousel-item>
         </el-carousel>
         <!-- 搜索框 -->
@@ -128,7 +128,7 @@
                   )"
                   :key="index"
                 >
-                  <img :src="tabContent.img" alt="" />
+                  <img v-lazy="tabContent.img" alt="" />
                   <div class="mask">
                     <span>{{ tabContent.prdNme }}</span>
                     <span>￥{{ tabContent.price.amt }}/人起</span>
@@ -194,7 +194,7 @@
                 <div class="item">
                   <div v-for="(item, index) in hotelInfo.prdLst" :key="index">
                     <a :href="item.lnk">
-                      <img :src="item.img" alt="" />
+                      <img v-lazy="item.img" alt="" />
                       <div class="mask">
                         <span>{{ item.nme }}</span>
                         <span>￥{{ item.price.amt }}/人起</span>
@@ -204,7 +204,7 @@
                 </div>
                 <div class="recommend">
                   <img
-                    :src="hotelInfo.adLst ? hotelInfo.adLst[0].img : ''"
+                    v-lazy="hotelInfo.adLst ? hotelInfo.adLst[0].img : ''"
                     alt=""
                   />
                 </div>
@@ -288,7 +288,7 @@
                 <div class="item">
                   <div v-for="(item, index) in carInfo.prdLst" :key="index">
                     <a :href="item.lnk">
-                      <img :src="item.img" alt="" />
+                      <img v-lazy="item.img" alt="" />
                     </a>
                     <p>{{ item.nme }}</p>
                     <div>
@@ -343,7 +343,7 @@
                     :key="index"
                   >
                     <a :href="item.lnk">
-                      <img :src="item.img" alt="" />
+                      <img v-lazy="item.img" alt="" />
                     </a>
                     <p>{{ item.nme }}</p>
                     <div>
@@ -449,6 +449,9 @@ import {
   getLeaveCountry,
 } from '../../api/home.js';
 import CitySelection from '@components/CitySelection/index.vue';
+import Vue from 'vue';
+import VueLazyload from 'vue-lazyload';
+Vue.use(VueLazyload);
 // import axios from 'axios';
 export default {
   name: 'Home',
@@ -537,7 +540,6 @@ export default {
     getCarInfo(name) {
       getCarList(`http://8.129.66.189:8081/home/carInfo?name=${name}`).then(
         (result) => {
-          console.log(result);
           this.carInfo = result[0];
         }
       );
@@ -547,7 +549,6 @@ export default {
       getLeaveCountry(
         `http://8.129.66.189:8081/home/leaveCountryInfo?name=${name}`
       ).then((result) => {
-        console.log(result);
         this.LeaveCountryInfo = result[0];
       });
     },
