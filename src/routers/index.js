@@ -5,6 +5,7 @@ import VueRouter from "vue-router";
 
 // const Home = () => import(/* webpackChunkName: "Home" */ "../views/home");
 const Hotel = () => import(/* webpackChunkName: "Hotel" */ "../views/hotel");
+// const  Day =()=>() => import(/* webpackChunkName: "Day" */"@views/day")
 Vue.use(VueRouter);
 
 const push = VueRouter.prototype.push;
@@ -18,7 +19,6 @@ VueRouter.prototype.replace = function(
   onComplete,
   onAbort = () => {}
 ) {
-  console.log(location);
   return replace.call(this, location, onComplete, onAbort);
 };
 
@@ -34,6 +34,10 @@ const router = new VueRouter({
       path: "/",
       component: Hotel,
     },
+    // {
+    //   path: "/",
+    //   component: Day,
+    // },
   ],
 });
 
