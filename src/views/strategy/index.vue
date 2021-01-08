@@ -27,11 +27,11 @@
     </header>
 
     <!-- 中间组件 -->
-    <div class="outer-container" @click="handleAllClick">
+    <div class="outer-container" @click.stop="handleAllClick">
       <div class="core-wrap">
         <!-- 搜索框 -->
         <div class="search">
-          <div class="fixed-position" @click="isHostCity = !isHostCity">
+          <div class="fixed-position" @click.stop="isHostCity = !isHostCity">
             <div>{{ area }}</div>
             <div>切换城市></div>
             <div
@@ -56,51 +56,54 @@
                     <a href="">沈阳</a>
                   </div>
                 </div>
-                <ul class="hotCity-list-item">
-                  <li>常州旅游攻略</li>
-                  <li>林州旅游攻略</li>
-                  <li>冲绳县旅游攻略</li>
-                  <li>北海旅游攻略</li>
-                  <li>塘栖旅游攻略</li>
-                  <li>凤凰城旅游攻略</li>
-                  <li>长兴岛旅游攻略</li>
-                  <li>佛冈旅游攻略</li>
-                  <li>哈尔施塔特旅游攻略</li>
-                  <li>兰纳旅游攻略</li>
-                  <li>多伦旅游攻略</li>
-                  <li>安庆旅游攻略</li>
-                  <li>芽庄旅游攻略</li>
-                  <li>常州旅游攻略</li>
-                  <li>林州旅游攻略</li>
-                  <li>冲绳县旅游攻略</li>
-                  <li>北海旅游攻略</li>
-                  <li>塘栖旅游攻略</li>
-                  <li>凤凰城旅游攻略</li>
-                  <li>长兴岛旅游攻略</li>
-                  <li>佛冈旅游攻略</li>
-                  <li>哈尔施塔特旅游攻略</li>
-                  <li>兰纳旅游攻略</li>
-                </ul>
+                <div class="hotCity-list-item">
+                  <div
+                    class="hotCity-list-selsect"
+                    v-for="item in 14"
+                    :key="item"
+                  >
+                    <p>A</p>
+                    <ul class="selsect-item">
+                      <li>北京</li>
+                      <li>上海</li>
+                      <li>广州</li>
+                      <li>深圳</li>
+                      <li>拉萨</li>
+                      <li>西藏</li>
+                      <li>阿里</li>
+                      <li>美国</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
 
-          <div>
+          <div class="searchArea">
             <input
               type="text"
-              placeholder="搜索城市/景点/游记/问答/住宿/用户"
+              placeholder="wangkai.zone 美妆==>口红区已更新,欢迎选购"
               class="search-input"
+              @input="handleInput"
             />
             <button class="search-button">搜索</button>
+            <ul
+              class="searchValue"
+              v-show="searchValAll.length !== 0 && inputVaule"
+            >
+              <li v-for="(sval, index) in searchValAll" :key="index">
+                {{ sval.word }}
+              </li>
+            </ul>
           </div>
         </div>
         <!-- banner -->
         <div class="banner-area">
           <div class="side-nav">
             <ul>
-              <li>
+              <li v-for="item in 9" :key="item">
                 <div class="side-nav-item">
-                  <div class="side-nav-iconfont">稳</div>
+                  <div class="side-nav-iconfont">安</div>
                   <div class="side-nav-con">
                     <div class="side-nav-con-show">
                       <div><a href="">深圳周边旅游</a></div>
@@ -110,57 +113,10 @@
                   </div>
                 </div>
                 <div class="side-nav-item-position">
-                  <h1>北京北京北京</h1>
+                  <h1>{{ Math.random() }}</h1>
                 </div>
               </li>
-              <li>
-                <div class="side-nav-item">
-                  <div class="side-nav-iconfont">稳</div>
-                  <div class="side-nav-con">
-                    <div class="side-nav-con-show">
-                      <div><a href="">深圳周边旅游</a></div>
-                      <div>></div>
-                    </div>
-                    <div><a href="">粤港澳地区</a></div>
-                  </div>
-                </div>
-                <div class="side-nav-item-position">
-                  <h1>
-                    上海啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊从
-                  </h1>
-                </div>
-              </li>
-              <li>
-                <div class="side-nav-item">
-                  <div class="side-nav-iconfont">稳</div>
-                  <div class="side-nav-con">
-                    <div class="side-nav-con-show">
-                      <div><a href="">深圳周边旅游</a></div>
-                      <div>></div>
-                    </div>
-                    <div><a href="">粤港澳地区</a></div>
-                  </div>
-                </div>
-                <div class="side-nav-item-position">
-                  <h1>深圳 周边旅游了解一下?</h1>
-                </div>
-              </li>
-              <li>
-                <div class="side-nav-item">
-                  <div class="side-nav-iconfont">稳</div>
-                  <div class="side-nav-con">
-                    <div class="side-nav-con-show">
-                      <div><a href="">深圳周边旅游</a></div>
-                      <div>></div>
-                    </div>
-                    <div><a href="">粤港澳地区</a></div>
-                  </div>
-                </div>
-                <div class="side-nav-item-position">
-                  <h1>北京北京北京</h1>
-                </div>
-              </li>
-              <li>
+              <!-- <li>
                 <div class="side-nav-item">
                   <div class="side-nav-iconfont">稳</div>
                   <div class="side-nav-con">
@@ -239,6 +195,53 @@
                   <h1>深圳 周边旅游了解一下?</h1>
                 </div>
               </li>
+              <li>
+                <div class="side-nav-item">
+                  <div class="side-nav-iconfont">稳</div>
+                  <div class="side-nav-con">
+                    <div class="side-nav-con-show">
+                      <div><a href="">深圳周边旅游</a></div>
+                      <div>></div>
+                    </div>
+                    <div><a href="">粤港澳地区</a></div>
+                  </div>
+                </div>
+                <div class="side-nav-item-position">
+                  <h1>北京北京北京</h1>
+                </div>
+              </li>
+              <li>
+                <div class="side-nav-item">
+                  <div class="side-nav-iconfont">稳</div>
+                  <div class="side-nav-con">
+                    <div class="side-nav-con-show">
+                      <div><a href="">深圳周边旅游</a></div>
+                      <div>></div>
+                    </div>
+                    <div><a href="">粤港澳地区</a></div>
+                  </div>
+                </div>
+                <div class="side-nav-item-position">
+                  <h1>
+                    上海啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊啊从
+                  </h1>
+                </div>
+              </li>
+              <li>
+                <div class="side-nav-item">
+                  <div class="side-nav-iconfont">稳</div>
+                  <div class="side-nav-con">
+                    <div class="side-nav-con-show">
+                      <div><a href="">深圳周边旅游</a></div>
+                      <div>></div>
+                    </div>
+                    <div><a href="">粤港澳地区</a></div>
+                  </div>
+                </div>
+                <div class="side-nav-item-position">
+                  <h1>深圳 周边旅游了解一下?</h1>
+                </div>
+              </li> -->
             </ul>
           </div>
           <div class="banner">
@@ -389,11 +392,11 @@
               <!-- @size-change="handleSizeChange"
                 @current-change="handleCurrentChange" -->
               <el-pagination
-                :current-page="4"
+                :current-page="recommendedArticles.length"
                 :page-sizes="[100, 200, 300, 400]"
-                :page-size="100"
+                :page-size="recommendedArticles.length"
                 layout="  prev, pager, next, jumper,total,sizes"
-                :total="400"
+                :total="recommendedArticles.length"
               >
               </el-pagination>
             </div>
@@ -676,6 +679,7 @@
    
 <script>
 import aixos from "axios";
+import axios from "axios";
 export default {
   name: "strategy",
   data() {
@@ -696,10 +700,33 @@ export default {
       // newInfo
       isnewInfo: false,
       // 地区
-      area: "北京",
+      area: "西藏",
+      // 输入框的值
+      inputVaule: "",
+      searchValAll: [],
     };
   },
+  watch: {
+    inputVaule(val) {
+      axios({
+        url:
+          "https://m.ctrip.com/restapi/h5api/globalsearch/search?action=online&source=globalonline&keyword=" +
+          val,
+        method: "POST",
+      })
+        .then((res) => {
+          this.searchValAll = res.data.data;
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    },
+  },
   methods: {
+    handleInput(event) {
+      this.inputVaule = event.target.value;
+      // console.log();
+    },
     handleClick() {},
     handleShopIndex(index) {
       this.isShop = index;
@@ -719,8 +746,11 @@ export default {
       }
     },
     hostCityValue(event) {
-      console.log(event.target.innerText);
-      this.area = event.target.innerText;
+      // console.log();
+      // this.area = event.target.innerText;
+      if (event.target.localName === "li" || event.target.localName === "a") {
+        this.area = event.target.innerText;
+      }
     },
     // 请求列表添加数据
     async getrecommendedArticles() {
@@ -740,7 +770,7 @@ export default {
           this.flag = true;
         }, 1500);
       } else {
-        if (this.recommendedArticles.length > 30) {
+        if (this.recommendedArticles.length > 100) {
           this.isnewInfo = false;
           return;
         } else {
@@ -751,7 +781,7 @@ export default {
             );
             this.flag = true;
             this.isnewInfo = false;
-          }, 1500);
+          }, 2000);
         }
       }
     },
@@ -866,15 +896,25 @@ export default {
           .hotCity {
             border-bottom: 1px solid #e6e6e6;
             padding-bottom: 10px;
-            p {
-              font-size: 12px;
-              color: #444;
-            }
-            .hotCity-list {
+          }
+          .hotCity-list-item {
+            .hotCity-list-selsect {
+              margin: 10px 0;
               display: flex;
-              flex-wrap: wrap;
-              a {
+              p {
+                width: 34px;
+                height: 22px;
+                color: white;
+                background-color: #00a7e1;
+                text-align: center;
                 margin-right: 8px;
+              }
+              .selsect-item {
+                display: flex;
+                align-items: center;
+                li {
+                  margin-right: 8px;
+                }
               }
             }
           }
@@ -898,7 +938,21 @@ export default {
           color: #999;
         }
       }
-
+      .searchArea {
+        position: relative;
+        .searchValue {
+          position: absolute;
+          height: 500px;
+          width: 500px;
+          background-color: #fff;
+          border: 1px solid #00a7e1;
+          z-index: 10;
+          padding: 20px;
+          li {
+            line-height: 30px;
+          }
+        }
+      }
       .search-input {
         width: 546px;
         height: 40px;
@@ -1355,7 +1409,8 @@ export default {
   // background-color: #00a7e1;
   bottom: 10px;
   right: 10px;
-  line-height: 50px;
+  line-height: 67px;
   text-align: center;
+  text-indent: -13px;
 }
 </style>
