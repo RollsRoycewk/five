@@ -5,6 +5,12 @@ import VueRouter from "vue-router";
 
 const Home = () => import(/* webpackChunkName: "Home" */ "../views/home");
 const Tour = () => import(/* webpackChunkName: "Home" */ "../views/tour");
+const Personal = () =>
+  import(/* webpackChunkName: "Personal" */ "../views/Personal");
+const Hotel = () => import(/* webpackChunkName: "Personal" */ "../views/Hotel");
+const Strategy = () =>
+  import(/* webpackChunkName: "Personal" */ "../views/strategy");
+
 Vue.use(VueRouter);
 
 const push = VueRouter.prototype.push;
@@ -35,6 +41,20 @@ const router = new VueRouter({
     {
       path: "/tour",
       component: Tour,
+    },
+    {
+      name: "personal",
+      path: "/personal",
+      component: Personal,
+    },
+    {
+      name: "hotel",
+      path: "/hotel",
+      component: Hotel,
+    },
+    {
+      path: "/strategy",
+      component: Strategy,
     },
   ],
 });
