@@ -2,6 +2,7 @@
   <div>
     <Header></Header>
     <Strategy></Strategy>
+    <button @click="toTour">toTour</button>
   </div>
 </template>
 
@@ -13,6 +14,11 @@ export default {
   components: {
     Strategy,
     Header,
+  },
+  methods: {
+    toTour() {
+      this.$router.push("/tour");
+    },
   },
 };
 </script>

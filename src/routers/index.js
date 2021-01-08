@@ -4,7 +4,7 @@ import VueRouter from "vue-router";
 // import Home from "../views/Home";
 
 const Home = () => import(/* webpackChunkName: "Home" */ "../views/home");
-
+const Tour = () => import(/* webpackChunkName: "Home" */ "../views/tour");
 Vue.use(VueRouter);
 
 const push = VueRouter.prototype.push;
@@ -31,6 +31,10 @@ const router = new VueRouter({
     {
       path: "/",
       component: Home,
+    },
+    {
+      path: "/tour",
+      component: Tour,
     },
   ],
 });
