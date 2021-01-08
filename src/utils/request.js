@@ -34,7 +34,7 @@ import "nprogress/nprogress.css";
 //   process.env.NODE_ENV === "development" ? "/" : "http://182.92.128.115/";
 const instance = axios.create({
   //  / 就是当前服务器地址
-  baseURL: `http://localhost:3001`, // 公共的基础路径
+  baseURL: `http://localhost:3000`, // 公共的基础路径
   headers: {
     // token: 'xxx' // 不行，登录接口不需要
   },
