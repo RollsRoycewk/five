@@ -10,6 +10,11 @@ const Personal = () =>
 const Hotel = () => import(/* webpackChunkName: "Personal" */ "../views/Hotel");
 const Strategy = () =>
   import(/* webpackChunkName: "Personal" */ "../views/strategy");
+const Minsu = () => import(/* webpackChunkName: "Home" */ "../views/Minsu");
+const DetileItem = () =>
+  import(/* webpackChunkName: "Home" */ "../views/DetileItem");
+const CityDetile = () =>
+  import(/* webpackChunkName: "Home" */ "../views/CityDetile");
 
 Vue.use(VueRouter);
 
@@ -56,7 +61,29 @@ const router = new VueRouter({
       path: "/strategy",
       component: Strategy,
     },
+    {
+      name: "minsu",
+      path: "/minsu",
+      component: Minsu,
+    },
+    {
+      name: "CityDetile",
+      path: "/cityDetile",
+      component: CityDetile,
+    },
+    {
+      name: "DetileItem",
+      path: "/detileItem",
+      component: DetileItem,
+    },
+    {
+      path: "/home",
+      component: Home,
+    },
   ],
+  scrollBehavior() {
+    return { x: 0, y: 0 };
+  },
 });
 
 export default router;

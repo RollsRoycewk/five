@@ -19,6 +19,7 @@ Vue.use(VueLazyload, {
   // loading: require("@assets/images/loading.gif"),
   loading: require("./assets/images/loading.gif"),
 });
+import "./styles/clearfix.css";
 
 Vue.config.productionTip = false;
 
